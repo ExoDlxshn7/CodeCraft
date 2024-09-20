@@ -12,35 +12,57 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SubApp1</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                <div class="logo"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CodeCraft</a>
+            </div>
+                <div class="Alignright">
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <!-- Show the login button if the user is NOT authenticated -->
+                        <button type="button" id="modalbtn">Logg inn</button>
+                    }
+                    else
+                    {
+                        <!-- Optionally, show a logout or profile button if the user is logged in -->
+                        <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                    }
                 </div>
             </div>
         </nav>
     </header>
+        @if (!User.Identity.IsAuthenticated){
+        <div id="modalbtn" class="modal">
+            <div class="modal-content">
+                <span class="close"></span>
+                <form action="action_page.php" method="post">
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit">Login</button>
+                    <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+                <div class="signup" style="background-color:#f1f1f1">
+                    <span class="psw">Not a member?<a class="signup" asp-area="" asp-controller="Home" asp-action="signup">Sign Up</a></span>
+                </div>
+                </form>
+            </div>
+        </div>
+        }
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - SubApp1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
