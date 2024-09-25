@@ -29,8 +29,7 @@
             </div>
         </nav>
     </header>
-        @if (!User.Identity.IsAuthenticated){
-        <div id="modalbtn" class="modal">
+        <div id="modal" class="modal">
             <div class="modal-content">
                 <span class="close"></span>
                 <form action="action_page.php" method="post">
@@ -56,7 +55,6 @@
                 </form>
             </div>
         </div>
-        }
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Kristian\\.nuget\\packages\\": {}
+    "C:\\Users\\Thilo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kristian\\Desktop\\CodeCraft\\SubApp1\\SubApp1.csproj",
+      "projectUniqueName": "C:\\Users\\Thilo\\OneDrive\\Dokumenter\\GitHub\\CodeCraft\\SubApp1\\SubApp1.csproj",
       "projectName": "SubApp1",
-      "projectPath": "C:\\Users\\Kristian\\Desktop\\CodeCraft\\SubApp1\\SubApp1.csproj",
-      "packagesPath": "C:\\Users\\Kristian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kristian\\Desktop\\CodeCraft\\SubApp1\\obj\\",
+      "projectPath": "C:\\Users\\Thilo\\OneDrive\\Dokumenter\\GitHub\\CodeCraft\\SubApp1\\SubApp1.csproj",
+      "packagesPath": "C:\\Users\\Thilo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Thilo\\OneDrive\\Dokumenter\\GitHub\\CodeCraft\\SubApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Kristian\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Thilo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
