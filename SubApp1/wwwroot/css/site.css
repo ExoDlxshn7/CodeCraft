@@ -43,10 +43,11 @@ body {
 
 #container-post {
   width: 100%;
-  background-color: black;
-  opacity:85%;
-  border-radius:5px;
   margin-bottom:25px;
+  background-color:#383434;
+  border-radius:5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color:white;
 }
 
 #container-post a {
@@ -56,9 +57,10 @@ body {
 
 #post-header {
   width:100%;
-  background-color:black;
-  opacity:90%;
+  background-color:#100c0c;
   border-radius: 5px 5px 0 0;
+  padding:15px;
+  margin: 0;
 }
 
 #post-pp {
@@ -74,35 +76,41 @@ body {
 #post-profile {
   display:inline-block;
   vertical-align: top;
+  margin-left:10px;
 }
 
-#left-50{
-  width: 45%;
+#post-contents {
+  background-color:#383434;
+  padding:15px;
+  margin:0;
+  border-radius: 0 0 5px 5px;
+}
+
+#photo-50{
+  width: 49%;
   display: inline-block;
   vertical-align: top;
   margin: 0 auto;
+  height:200px;
+  object-fit:cover;
+  border-radius:5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#right-50{
-  width: 45%;
-  display: inline-block;
-  vertical-align: top;
-  margin: 0 auto;
+#post-area {
+  padding:15px;
 }
 
 #post-textarea {
-  background-color:black;
+  background-color:#383434;
   color:white;
   width:90%;
   overflow:hidden;
   display:inline-block;
   vertical-align: top;
-  border:0;
-}
-
-#post-icons {
-  color:white;
-  display:inline-block;
+  border:none;
+  resize: none;
+  outline: none;
 }
 
 #post {
@@ -112,8 +120,23 @@ body {
 }
 
 #post-button {
-  border-radius:15px;
-  background-color:white;
-  color:black;
-  padding-bottom:15px;
+  border-radius:25px;
+  background-color:#100c0c;
+  color:white;
+  padding:10px;
+}
+
+#post-interaction {
+  margin-top: 15px;
+  display:inline-block;
+}
+
+#post-choice {
+  margin-right: 15px;
+}
+
+#post-posted {
+  float:right;
+  text-align: right;
+  color:#d5d5d5;
 }
