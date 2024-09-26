@@ -21,10 +21,17 @@
                     @if (!User.Identity.IsAuthenticated){
                         <!-- Show the login button if the user is NOT authenticated -->
                         <button type="button" id="modalbtn">Logg inn</button>
+                        <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Profile">Profile</a>
                     }   
                     else{
                         <!-- Optionally, show a logout or profile button if the user is logged in -->
-                        <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                        <div class="profile-menu">
+                            <button>Profile</button>
+                            <div class="profile-options">
+                            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Profile">Profile</a>
+                            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                            </div>
+                        </div>
                     }
                 }
             </div>
