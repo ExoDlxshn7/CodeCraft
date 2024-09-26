@@ -140,3 +140,51 @@ body {
   text-align: right;
   color:#d5d5d5;
 }
+
+html {
+  font-size: 3vw;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+#container-left {
+  width:100%;
+  display: block;
+  margin: 0 auto;
+}
+
+#container-right {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  #container-left, #container-right {
+    display: inline-block;
+    vertical-align: top;
+    #container-left {
+      width: 30%;
+    }
+    #container-right {
+      width: 60%;
+    }
+  }
+}
+
+#left-50, #right-50 {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  #left-50, #right-50 {
+    width: 45%;
+    display: inline-block;
+  }
+}
