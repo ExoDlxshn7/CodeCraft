@@ -21,14 +21,14 @@ body {
   margin-bottom: 60px;
 }
 
-#container-left {
+#profile-container-left {
   width:30%;
   display: inline-block;
   vertical-align: top;
   margin: 0 auto;
 }
 
-#container-right {
+#profile-container-right {
   width: 60%;
   display: inline-block;
   vertical-align: top;
