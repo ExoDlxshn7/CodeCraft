@@ -599,3 +599,5 @@ C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Try
 C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Trying\CodeCraft\SubApp1\obj\Debug\net8.0\SubApp1.pdb
 C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Trying\CodeCraft\SubApp1\obj\Debug\net8.0\SubApp1.genruntimeconfig.cache
 C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Trying\CodeCraft\SubApp1\obj\Debug\net8.0\ref\SubApp1.dll
+C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Trying\CodeCraft\SubApp1\bin\Debug\net8.0\package-lock.json
+C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Trying\CodeCraft\SubApp1\bin\Debug\net8.0\package.json
