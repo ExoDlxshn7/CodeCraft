@@ -50,6 +50,34 @@ button.accept-policy[b-9u9adl8uei] {
   line-height: inherit;
 }
 
+.profile-menu[b-9u9adl8uei] {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-options[b-9u9adl8uei] {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.profile-options a[b-9u9adl8uei] {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.profile-options a:hover[b-9u9adl8uei] {
+  background-color: #ddd;
+}
+
+.profile-menu:hover .profile-options[b-9u9adl8uei] {
+  display: block;
+}
 .footer[b-9u9adl8uei] {
   position: absolute;
   bottom: 0;

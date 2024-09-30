@@ -10,7 +10,7 @@ using MyShop.Models;
 namespace SubApp1.Migrations
 {
     [DbContext(typeof(ItemDbContext))]
-    [Migration("20240926211615_InitialCreate")]
+    [Migration("20240930200536_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
