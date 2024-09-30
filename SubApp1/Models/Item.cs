@@ -1,5 +1,5 @@
 using System;
-namespace MyShop.Models
+namespace SubApp1.Models
 {
 	public class Item
 	{

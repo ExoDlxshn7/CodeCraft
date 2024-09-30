@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using MyShop.Models;
-using MyShop.ViewModels;
+using SubApp1.Models;
+using SubApp1.ViewModels;
 
 namespace MyShop.Controllers;
 

@@ -1,6 +1,6 @@
-using MyShop.Models;
+using SubApp1.Models;
 
-namespace MyShop.ViewModels
+namespace SubApp1.ViewModels
 {
     public class ItemsViewModel
     {

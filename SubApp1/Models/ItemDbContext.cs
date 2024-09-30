@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace MyShop.Models;
+namespace SubApp1.Models;
 
 public class ItemDbContext : DbContext
 {
