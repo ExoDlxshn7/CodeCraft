@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b0fT2rr6I5c=",
+  "dgSpecHash": "oXaFuftUQWc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Trying\\CodeCraft\\SubApp1\\SubApp1.csproj",
+  "projectFilePath": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\SubApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fatta\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\fatta\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

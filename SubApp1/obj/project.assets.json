@@ -2540,11 +2540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Trying\\CodeCraft\\SubApp1\\SubApp1.csproj",
+      "projectUniqueName": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\SubApp1.csproj",
       "projectName": "SubApp1",
-      "projectPath": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Trying\\CodeCraft\\SubApp1\\SubApp1.csproj",
+      "projectPath": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\SubApp1.csproj",
       "packagesPath": "C:\\Users\\fatta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Trying\\CodeCraft\\SubApp1\\obj\\",
+      "outputPath": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
