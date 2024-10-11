@@ -6,9 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<ItemDbContext>(options => {
+builder.Services.AddDbContext<RegisterDbContext>(options => {
     options.UseSqlite(
-        builder.Configuration["ConnectionStrings:ItemDbContextConnection"]);
+        builder.Configuration["ConnectionStrings:RegisterDbContextConnection"]);
 });
 
 var app = builder.Build();

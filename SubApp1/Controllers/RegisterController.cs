@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using SubApp1.Models;
-using SubApp1.ViewModels;
 
 namespace SubApp1.Controllers;
 
@@ -8,7 +7,7 @@ public class RegisterController : Controller
 {
     private readonly RegisterDbContext _registerDbContext;
 
-    public RegisterControllerController(RegisterControllerDbContext registerDbContext)
+    public RegisterController(RegisterControllerDbContext registerDbContext)
     {
         _registerDbContext = registerDbContext;
     }

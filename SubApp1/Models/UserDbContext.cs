@@ -2,9 +2,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SubApp1.Models;
 
-public class UserDbContext : DbContext
+public class RegisterDbContext : DbContext
 {
-	public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
+	public RegisterDbContext(DbContextOptions<RegisterDbContext> options) : base(options)
 	{
         Database.EnsureCreated();
 	}
