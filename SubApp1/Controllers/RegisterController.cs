@@ -7,7 +7,7 @@ public class RegisterController : Controller
 {
     private readonly RegisterDbContext _registerDbContext;
 
-    public RegisterController(RegisterControllerDbContext registerDbContext)
+    public RegisterController(RegisterDbContext registerDbContext)
     {
         _registerDbContext = registerDbContext;
     }
