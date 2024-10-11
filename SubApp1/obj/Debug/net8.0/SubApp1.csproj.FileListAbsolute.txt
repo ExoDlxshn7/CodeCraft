@@ -269,3 +269,9 @@ C:\Users\Kristian\Documents\GitHub\CodeCraft\Subapp1\obj\Debug\net8.0\SubApp1.Ra
 C:\Users\Kristian\Documents\GitHub\CodeCraft\Subapp1\obj\Debug\net8.0\SubApp1.dll
 C:\Users\Kristian\Documents\GitHub\CodeCraft\Subapp1\obj\Debug\net8.0\refint\SubApp1.dll
 C:\Users\Kristian\Documents\GitHub\CodeCraft\Subapp1\obj\Debug\net8.0\SubApp1.pdb
+C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Eksammen\CodeCraft\SubApp1\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Eksammen\CodeCraft\SubApp1\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Eksammen\CodeCraft\SubApp1\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Eksammen\CodeCraft\SubApp1\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Eksammen\CodeCraft\SubApp1\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\fatta\OneDrive\Dokumenter\Studie\Høst2024\ITPE3200Webapplikasjoner\Eksammen\CodeCraft\SubApp1\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
