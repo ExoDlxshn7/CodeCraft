@@ -2,11 +2,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SubApp1.Models;
 
-public class RegisterDbContext : DbContext
+public class UserDbContext : DbContext
 {
-	public RegisterDbContext(DbContextOptions<RegisterDbContext> options) : base(options)
+	public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
 	{
-        Database.EnsureCreated();
+       Database.Migrate();
 	}
 
 	public DbSet<User> Users { get; set; }

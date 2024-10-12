@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0/p3QvE324s=",
+  "dgSpecHash": "KZdcmxBzNxQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\SubApp1.csproj",
   "expectedPackageFiles": [
@@ -19,7 +19,6 @@
     "C:\\Users\\fatta\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.10\\microsoft.entityframeworkcore.relational.8.0.10.nupkg.sha512",
     "C:\\Users\\fatta\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\8.0.10\\microsoft.entityframeworkcore.sqlite.8.0.10.nupkg.sha512",
     "C:\\Users\\fatta\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\8.0.10\\microsoft.entityframeworkcore.sqlite.core.8.0.10.nupkg.sha512",
-    "C:\\Users\\fatta\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.10\\microsoft.entityframeworkcore.tools.8.0.10.nupkg.sha512",
     "C:\\Users\\fatta\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\fatta\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.1\\microsoft.extensions.caching.memory.8.0.1.nupkg.sha512",
     "C:\\Users\\fatta\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

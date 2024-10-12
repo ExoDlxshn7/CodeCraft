@@ -6,10 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-<ItemGroup>
-    <!-- Entity Framework Core dependencies -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.10" /> <!-- If you're using SQLite -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.10" />
   </ItemGroup>
 
 </Project>

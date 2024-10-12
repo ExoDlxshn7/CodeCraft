@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SubApp1.Models;
 using System.Diagnostics;
 
@@ -6,11 +7,11 @@ using System.Diagnostics;
 
 namespace SubApp1.Controllers;
 
-public class RegisterController : Controller
+public class UserController : Controller
 {
-    private readonly RegisterDbContext _registerDbContext;
+    private readonly UserDbContext _registerDbContext;
 
-    public RegisterController(RegisterDbContext registerDbContext)
+    public UserController(UserDbContext registerDbContext)
     {
         _registerDbContext = registerDbContext;
     }
