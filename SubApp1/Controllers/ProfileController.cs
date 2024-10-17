@@ -27,22 +27,27 @@ namespace SubApp1.Controllers
             return View("~/Views/Home/Friends.cshtml",friends);
         }
 
-        public IActionResult AddFriend(Friend friend){
-            _userDbcontext.Friends.Add(friend);
+        
+        [HttpGet]
+        public IActionResult RemoveFriend(int id){
+            var friend = _userDbcontext.Friends.Find(id);
+             if(friend == null){
+                return NotFound();
+            }
+            return View(friend);
+        }
+
+        [HttpPost]
+
+        public IActionResult RemoveFriendConfirmed(int id){
+            var friend = _userDbcontext.Friends.Find(id);
+            if(friend == null){
+                return NotFound();
+            }
+            _userDbcontext.Friends.Remove(friend);
             _userDbcontext.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        public IActionResult RemoveFriend(int id){
-            var friend = _userDbcontext.Friends.Find(id);
-            if(friend != null){
-                _userDbcontext.Friends.Remove(friend);
-                _userDbcontext.SaveChanges();
-            }
-            return RedirectToAction("Index");
-        }
-
-
 
            public IActionResult Logout(){
             return RedirectToAction("Index", "Login");
