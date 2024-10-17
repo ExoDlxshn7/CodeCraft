@@ -1,4 +1,6 @@
 using AspNetCoreGeneratedDocument;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using SubApp1.Models;
@@ -49,8 +51,12 @@ namespace SubApp1.Controllers
             return RedirectToAction("Index");
         }
 
-           public IActionResult Logout(){
-            return RedirectToAction("Index", "Login");
-           }
+        [HttpPost]
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
+             return RedirectToAction("Index", "Login");
+        }
     }
 }
