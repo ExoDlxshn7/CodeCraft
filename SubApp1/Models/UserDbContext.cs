@@ -6,8 +6,9 @@ public class UserDbContext : DbContext
 {
 	public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
 	{
-       Database.Migrate();
+       Database.EnsureCreated();
 	}
 
 	public DbSet<User> Users { get; set; }
+	public DbSet<Friend> Friends { get; set; }
 }

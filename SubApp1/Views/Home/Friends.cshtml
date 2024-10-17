@@ -1,0 +1,18 @@
+@model IEnumerable<SubApp1.Models.Friend>
+
+<div>
+    <h1>Friends</h1>
+
+    @foreach (var friend in Model)
+    {
+        <div class="friend-profile">
+            <img src="@friend.ProfilePictureUrl" alt="Profile picture" />
+
+            <h2>@friend.Name</h2>
+
+            <p>@friend.Bio</p>
+
+            <a asp-controller="Profile" asp-action="Details" asp-route-id="@friend.Id">View Profile</a>
+        </div>
+    }
+</div>
