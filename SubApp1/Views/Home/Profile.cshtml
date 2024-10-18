@@ -8,8 +8,9 @@
 
     <div id="navbar-left">
         <a id="navbar-item" asp-controller="Profile" asp-action="Friends">Friends</a><br>
-        <a id="navbar-item" href="">Edit Profile</a><br>
+        <a id="navbar-item" asp-controller="Profile" asp-action="Edit">Edit Profile</a><br>
         <a id="navbar-item" asp-controller="Profile" asp-action="Logout">Logout</a>
+
     </div>
 </div>
 <div id="profile-container-right">
@@ -19,15 +20,23 @@
         <div id="post-pp">
             <img id="pp-content" src="https://i.imgur.com/Z8k08or.png">
         </div>
-        <textarea id="post-textarea" placeholder="Write something"></textarea>
+        <form asp-action="CreatePost" asp-controller="Profile" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+
+        <textarea id="post-textarea" name="PostContent" placeholder="Write something"></textarea>
+
+        <!-- File input for image upload -->
+        <input type="file" id="post-image" name="PostImage" accept="image/*" />
+        
         <div id="post-interaction">
             <span id="post-choice"><i class="fa-regular fa-image"></i></span>
             <span id="post-choice"><i class="fa-regular fa-face-smile"></i></span>
             <span id="post-choice"><i class="fa-solid fa-location-dot"></i></span>
         </div>
         <div id="post" class="AlignRight">
-            <button id="post-button">Post</button>
+           <button id="post-button" type="submit">Post</button>
         </div>
+        </form>
         </div>
     </div>
 
@@ -92,4 +101,5 @@
     </div>
 
 </div>
+
 </body>

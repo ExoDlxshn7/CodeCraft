@@ -1,0 +1,13 @@
+@model User
+
+<h1>Edit Profile</h1>
+
+<form asp-action="Edit" asp-controller="Profile" method="post">
+    <input type="hidden" asp-for="UserId" />
+
+    <label for="Name">Name:</label>
+    <input type="text" asp-for="Username" />
+    <!-- Repeat for all properties -->
+
+    <button type="submit">Save</button>
+</form>
