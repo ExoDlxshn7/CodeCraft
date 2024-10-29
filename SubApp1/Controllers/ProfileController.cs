@@ -13,20 +13,20 @@ namespace SubApp1.Controllers
 {
     public class ProfileController : Controller
     {
+       private readonly ILogger<ProfileController> _logger; 
        private readonly UserDbContext _userDbcontext;
        private readonly IWebHostEnvironment _hostingEnvironment;
-        public ProfileController(UserDbContext userDbContext, IWebHostEnvironment hostingEnvironment){
+        public ProfileController(UserDbContext userDbContext, IWebHostEnvironment hostingEnvironment, ILogger<ProfileController> logger){
               _userDbcontext = userDbContext;
               _hostingEnvironment = hostingEnvironment;
-              
+              _logger = logger;
+
         }
     
         public IActionResult Index(){
             var friends = _userDbcontext.Friends.ToList();
             return View(friends);
         }
-
-    
 
         public IActionResult Friends(){
             var friends = _userDbcontext.Friends.ToList();
@@ -90,6 +90,10 @@ namespace SubApp1.Controllers
 [HttpPost]
 public IActionResult CreatePost(string PostContent, IFormFile PostImage)
 {
+    _logger.LogInformation("[ItemController] Item list not found while executing _itemRepository.GetAll()");
+    _logger.LogWarning("[ItemController] Item list not found while executing _itemRepository.GetAll()");
+    _logger.LogError("[ItemController] Item list not found while executing _itemRepository.GetAll()");
+
     if (string.IsNullOrEmpty(PostContent) && PostImage == null)
     {
         // Handle error or return the form with validation message
@@ -127,8 +131,6 @@ public IActionResult CreatePost(string PostContent, IFormFile PostImage)
 
         return RedirectToAction("ProfilePage");
 }
-
-       
 
         [HttpPost]
         public async Task<IActionResult> Logout()
