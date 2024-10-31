@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SubApp1.Models;
 
-public class UserDbContext : DbContext
+public class UserDbContext : IdentityDbContext
 {
 	public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
 	{

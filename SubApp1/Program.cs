@@ -2,8 +2,10 @@ using Microsoft.EntityFrameworkCore;
 using SubApp1.Models;
 using Serilog;
 using Serilog.Events;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("UserDbContextConnection") ?? throw new InvalidOperationException("Connection string 'UserDbContextConnection' not found.");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -12,6 +14,9 @@ builder.Services.AddDbContext<UserDbContext>(options => {
     options.UseSqlite(
         builder.Configuration["ConnectionStrings:UserDbContextConnection"]);
 });
+
+builder.Services.AddRazorPages();
+builder.Services.AddSession();
 
 var loggerConfiguration = new LoggerConfiguration()
     .MinimumLevel.Information() // levels: Trace< Information < Warning < Erorr < Fatal
@@ -36,11 +41,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseAuthentication();
 app.UseRouting();
-
+app.MapRazorPages();
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

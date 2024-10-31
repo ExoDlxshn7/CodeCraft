@@ -1,5 +1,4 @@
 using System.Security.Claims;
-using AspNetCoreGeneratedDocument;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
@@ -8,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.AspNetCore.Hosting;
 using SubApp1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SubApp1.Controllers
 {
@@ -34,6 +34,7 @@ namespace SubApp1.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult RemoveFriend(int id){
             var friend = _userDbcontext.Friends.Find(id);
              if(friend == null){
