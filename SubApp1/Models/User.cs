@@ -3,7 +3,9 @@ namespace SubApp1.Models
 {
 	public class User
 	{
-		public int UserId { get; set; }
+        internal readonly string? Id;
+
+        public int UserId { get; set; }
 		public required string Username { get; set; }
 		public required string Email { get; set; }
 		public required string Passord { get; set; }
