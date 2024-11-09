@@ -1,16 +1,19 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SubApp1.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SubApp1.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly UserDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, UserDbContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
@@ -20,7 +23,8 @@ public class HomeController : Controller
 
     public IActionResult Profile()
     {
-        return View();
+        var posts = _context.Posts.Include(p => p.User).ToList();
+        return View(posts);
     }
 
 

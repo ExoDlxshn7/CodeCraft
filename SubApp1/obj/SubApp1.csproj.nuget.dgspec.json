@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\NyCode\\CodeCraft\\SubApp1\\SubApp1.csproj": {}
+    "c:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft1\\CodeCraft\\SubApp1\\SubApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\NyCode\\CodeCraft\\SubApp1\\SubApp1.csproj": {
+    "c:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft1\\CodeCraft\\SubApp1\\SubApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\NyCode\\CodeCraft\\SubApp1\\SubApp1.csproj",
+        "projectUniqueName": "c:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft1\\CodeCraft\\SubApp1\\SubApp1.csproj",
         "projectName": "SubApp1",
-        "projectPath": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\NyCode\\CodeCraft\\SubApp1\\SubApp1.csproj",
-        "packagesPath": "C:\\Users\\fatta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\NyCode\\CodeCraft\\SubApp1\\obj\\",
+        "projectPath": "c:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft1\\CodeCraft\\SubApp1\\SubApp1.csproj",
+        "packagesPath": "C:\\Users\\Kevol\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft1\\CodeCraft\\SubApp1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\fatta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Kevol\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

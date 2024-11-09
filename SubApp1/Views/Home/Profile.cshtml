@@ -1,4 +1,4 @@
-@model List<SubApp1.Models.Post>
+@model IEnumerable<SubApp1.Models.Post>
 
 @{
     ViewData["Title"] = "Profile Page";
@@ -20,7 +20,7 @@
         <!-- Post Creation Area -->
         <div id="container-post">
             <div id="post-area">
-                <form asp-action="CreatePost" asp-controller="Profile" method="post" enctype="multipart/form-data">
+                <form asp-action="CreatePost" asp-controller="Post" method="post" enctype="multipart/form-data">
                     @Html.AntiForgeryToken()
                     <textarea id="post-textarea" name="PostContent" placeholder="Write something"></textarea>
                     <input type="file" id="post-image" name="PostImage" accept="image/*" />
@@ -30,12 +30,20 @@
         </div>
 
         <!-- User's Posts Display Area -->
-        @foreach (var post in Model)
+       @foreach (var post in Model)
         {
             <div id="container-post">
                 <div id="post-header">
+                    <div id="post-pp">
+                        <img alt="Profile picture" id="pp-content" src="
+                        @post.User.ProfilePic
+                        ">
+                    </div>
                     <div id="post-profile">
-                        <span>@post.CreatedAt.ToString("MMM dd") at @post.CreatedAt.ToString("HH:mm")</span>
+                        @post.User.Username
+                    </div>
+                    <div id="post-posted">
+                        <span>@post.CreatedAt.ToString("MMM dd") <br>at @post.CreatedAt.ToString("HH:mm")</span>
                     </div>
                 </div>
                 
@@ -44,9 +52,10 @@
                     
                     @if (!string.IsNullOrEmpty(post.ImageUrl))
                     {
-                        <img id="post-image-content" src="@post.ImageUrl" />
+                        <img id="photo" src="@post.ImageUrl" />
                     }
                     
+
                     <div id="post-interaction">
                         <span id="post-choice"><a href="#"><i class="fa-regular fa-heart"></i> Like</a></span>
                         <span id="post-choice"><a href="#"><i class="fa-regular fa-comment"></i> Comment</a></span>
