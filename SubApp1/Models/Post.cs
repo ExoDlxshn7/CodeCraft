@@ -13,7 +13,6 @@ public class Post
     public string? ImageUrl { get; set; }
 
 
-    // If you want a relationship with the User model
     public User? User { get; set; }
 }
 }

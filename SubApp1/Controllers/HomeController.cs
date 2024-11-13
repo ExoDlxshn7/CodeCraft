@@ -23,10 +23,9 @@ public class HomeController : Controller
 
     public IActionResult Profile()
     {
-        var posts = _context.Posts.Include(p => p.User).ToList();
+        var posts = _context.Posts.Include(p => p.User).OrderByDescending(p => p.CreatedAt).ToList();
         return View(posts);
     }
-
 
     public IActionResult signup()
     {
