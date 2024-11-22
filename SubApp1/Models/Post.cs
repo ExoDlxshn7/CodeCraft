@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations; 
 using SubApp1.Models;
 
-
+namespace SubApp1.Models{
 public class Post
 {
     public int Id { get; set; }
@@ -13,6 +13,6 @@ public class Post
     public string? ImageUrl { get; set; }
 
 
-    // If you want a relationship with the User model
     public User? User { get; set; }
+}
 }

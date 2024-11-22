@@ -16,6 +16,7 @@ builder.Services.AddDbContext<UserDbContext>(options => {
 });
 
 builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddSession();
 
 var loggerConfiguration = new LoggerConfiguration()
