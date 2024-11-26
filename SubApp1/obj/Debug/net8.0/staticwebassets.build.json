@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EfaKWpfNzRE1CPi2JU6OhK3tyiD/lXhtKRvpnxtiLJ4=",
+  "Hash": "xfMrqZwohIXoYM5PIbr2v5s0/Ck9uGuQzJrgIKwXGM0=",
   "Source": "SubApp1",
   "BasePath": "_content/SubApp1",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Kevol\\Desktop\\github\\CodeCraft\\SubApp1\\wwwroot\\Images\\243xe4ho.h0i638682324223715764.png",
+      "SourceId": "SubApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kevol\\Desktop\\github\\CodeCraft\\SubApp1\\wwwroot\\",
+      "BasePath": "_content/SubApp1",
+      "RelativePath": "Images/243xe4ho.h0i638682324223715764.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\243xe4ho.h0i638682324223715764.png"
     },
     {
       "Identity": "C:\\Users\\Kevol\\Desktop\\github\\CodeCraft\\SubApp1\\wwwroot\\Images\\crleu1db.f4x638667573705030264.png",
