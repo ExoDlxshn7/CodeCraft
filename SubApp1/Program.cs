@@ -3,6 +3,8 @@ using SubApp1.Models;
 using Serilog;
 using Serilog.Events;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using SubApp1.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("UserDbContextConnection") ?? throw new InvalidOperationException("Connection string 'UserDbContextConnection' not found.");
@@ -15,9 +17,15 @@ builder.Services.AddDbContext<UserDbContext>(options => {
         builder.Configuration["ConnectionStrings:UserDbContextConnection"]);
 });
 
+builder.Services.AddSingleton<IEmailSender, MockEmailSender>();
+
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddSession();
+
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<UserDbContext>()
+    .AddDefaultTokenProviders();
 
 var loggerConfiguration = new LoggerConfiguration()
     .MinimumLevel.Information() // levels: Trace< Information < Warning < Erorr < Fatal

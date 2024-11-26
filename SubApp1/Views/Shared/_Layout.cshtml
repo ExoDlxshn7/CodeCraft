@@ -13,32 +13,11 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <div class="logo"><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CodeCraft</a>
-                </div>
-            </div>
-            <div class="Alignright">
-                @* Check if we're on the Index page *@
-                    @if (ViewContext.RouteData.Values["action"].ToString() == "Index" && ViewContext.RouteData.Values["controller"].ToString() == "Home"){
-                    @if (!User.Identity.IsAuthenticated){
-                        <!-- Show the login button if the user is NOT authenticated -->
-                        <button type="button" id="modalbtn">Logg inn</button>
-                        <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Profile">Profile</a>
-                    }   
-                    else{
-                        <!-- Optionally, show a logout or profile button if the user is logged in -->
-                        <div class="profile-menu">
-                            <button>Profile</button>
-                            <div class="profile-options">
-                            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Profile">Profile</a>
-                            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
-                            </div>
-                        </div>
-                    }
-                }
-            </div>
+            <a class="navbar-brand" href="/">CodeCraft</a>
+            <partial name="_LoginPartial" />
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -49,6 +28,5 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

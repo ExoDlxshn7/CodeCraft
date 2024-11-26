@@ -41,41 +41,6 @@ namespace SubApp1.Controllers
             return View("Profile", userPosts);
         }
 
-        // Show the list of friends
-        public IActionResult Friends()
-        {
-            var friends = _userDbcontext.Friends.ToList();
-            return View("~/Views/Home/Friends.cshtml", friends);
-        }
-
-        // GET: Show Remove Friend page
-        [Authorize]
-        [HttpGet]
-        public IActionResult RemoveFriend(int id)
-        {
-            var friend = _userDbcontext.Friends.Find(id);
-            if (friend == null)
-            {
-                return NotFound();
-            }
-            return View(friend);
-        }
-
-        // POST: Confirm removing a friend
-        [Authorize]
-        [HttpPost]
-        public IActionResult RemoveFriendConfirmed(int id)
-        {
-            var friend = _userDbcontext.Friends.Find(id);
-            if (friend == null)
-            {
-                return NotFound();
-            }
-            _userDbcontext.Friends.Remove(friend);
-            _userDbcontext.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
         // GET: Show the Edit Profile page
         [Authorize]
         [HttpGet]
@@ -100,7 +65,7 @@ namespace SubApp1.Controllers
                 return NotFound();
             }
 
-            userToUpdate.Username = user.Username;
+            userToUpdate.UserName = user.UserName;
             userToUpdate.Email = user.Email;
             // Add additional properties as needed
 

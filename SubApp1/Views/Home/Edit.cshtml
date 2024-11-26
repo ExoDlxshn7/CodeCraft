@@ -3,10 +3,10 @@
 <h1>Edit Profile</h1>
 
 <form asp-action="Edit" asp-controller="Profile" method="post">
-    <input type="hidden" asp-for="UserId" />
+    <input type="hidden" asp-for="Id" />
 
     <label for="Name">Name:</label>
-    <input type="text" asp-for="Username" />
+    <input type="text" asp-for="UserName" />
     <!-- Repeat for all properties -->
 
     <button type="submit">Save</button>

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SubApp1.Models;
 
-public class UserDbContext : IdentityDbContext
+public class UserDbContext : IdentityDbContext<User>
 {
 	public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
 	{
@@ -11,6 +11,5 @@ public class UserDbContext : IdentityDbContext
 	}
 
 	public new DbSet<User> Users { get; set; }
-	public DbSet<Friend> Friends { get; set; }
 	public DbSet<Post> Posts { get; set; }
 }
