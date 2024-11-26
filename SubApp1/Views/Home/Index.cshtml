@@ -1,8 +1,62 @@
-﻿@{
+﻿@model IEnumerable<SubApp1.Models.Post>
+
+@{
     ViewData["Title"] = "Home Page";
 }
-<body>
-        <main>
 
-        </main>
- </body>
+<script src="https://kit.fontawesome.com/b090154bf0.js" crossorigin="anonymous"></script>
+
+<body>
+    <div id="profile-container-left">
+
+    </div>
+    
+    <div id="profile-container-right">
+        <!-- Post Creation Area -->
+        <div id="container-post">
+            <div id="post-area">
+                <form asp-action="CreatePost" asp-controller="Post" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <textarea id="post-textarea" name="PostContent" placeholder="Write something"></textarea>
+                    <input type="file" id="post-image" name="PostImage" accept="image/*" />
+                    <button id="post-button" type="submit">Post</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- User's Posts Display Area -->
+       @foreach (var post in Model)
+        {
+            <div id="container-post">
+                <div id="post-header">
+                    <div id="post-pp">
+                        <img alt="Profile picture" id="pp-content" src="@post.User.ProfilePic">
+                    </div>
+                    <div id="post-profile">
+                        @post.User.UserName
+                    </div>
+                    <div id="post-posted">
+                        <span>@post.CreatedAt.ToString("MMM dd") <br>at @post.CreatedAt.ToString("HH:mm")</span>
+                    </div>
+                </div>
+                
+                <div id="post-contents">
+                    <p>@post.Content</p>
+                    
+                    @if (!string.IsNullOrEmpty(post.ImageUrl))
+                    {
+                        <img id="photo" src="@post.ImageUrl" />
+                    }
+                    
+
+                    <div id="post-interaction">
+                        <span id="post-choice"><a href="#"><i class="fa-regular fa-heart"></i> Like</a></span>
+                        <span id="post-choice"><a href="#"><i class="fa-regular fa-comment"></i> Comment</a></span>
+                        <span id="post-choice"><a href="#"><i class="fa-regular fa-star"></i> Favorite</a></span>
+                        <span id="post-choice"><a href="#"><i class="fa-regular fa-share-from-square"></i> Share</a></span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>

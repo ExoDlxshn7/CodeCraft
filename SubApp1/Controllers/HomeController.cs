@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SubApp1.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace SubApp1.Controllers;
 
@@ -18,14 +19,23 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
-    }
-
-    public IActionResult Profile()
-    {
         var posts = _context.Posts.Include(p => p.User).OrderByDescending(p => p.CreatedAt).ToList();
         return View(posts);
     }
+
+public IActionResult Profile()
+{
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    if (string.IsNullOrEmpty(userId)) return Unauthorized();
+
+    var userPosts = _context.Posts
+        .Where(p => p.UserId == userId)
+        .Include(p => p.User)
+        .OrderByDescending(p => p.CreatedAt)
+        .ToList();
+
+    return View(userPosts);
+}
 
     public IActionResult signup()
     {

@@ -10,6 +10,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SubApp1.Models;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+
+
 
 namespace SubApp1.Areas.Identity.Pages.Account.Manage
 {
@@ -17,13 +22,17 @@ namespace SubApp1.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IWebHostEnvironment _hostEnvironment;
+
 
         public IndexModel(
             UserManager<User> userManager,
-            SignInManager<User> signInManager)
+            SignInManager<User> signInManager,
+            IWebHostEnvironment hostEnvironment)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _hostEnvironment = hostEnvironment;
         }
 
         /// <summary>
@@ -59,6 +68,10 @@ namespace SubApp1.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+
+            [Display(Name = "Profile Picture")]
+            public IFormFile ProfilePic { get; set; }
         }
 
         private async Task LoadAsync(User user)
@@ -100,6 +113,24 @@ namespace SubApp1.Areas.Identity.Pages.Account.Manage
                 return Page();
             }
 
+            if (Input.ProfilePic != null)
+            {
+                var prefix = "profile_";
+                var fileName = "";
+                do
+                {
+                    fileName = prefix + Path.GetRandomFileName() + DateTime.Now.Ticks + Path.GetExtension(Input.ProfilePic.FileName);
+                } while (System.IO.File.Exists(Path.Combine(_hostEnvironment.WebRootPath, "Images", fileName)));
+
+                var filePath = Path.Combine(_hostEnvironment.WebRootPath, "Images", fileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await Input.ProfilePic.CopyToAsync(fileStream);
+                }
+
+                user.ProfilePic = $"/Images/{fileName}";
+            }
+
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             if (Input.PhoneNumber != phoneNumber)
             {
@@ -109,6 +140,15 @@ namespace SubApp1.Areas.Identity.Pages.Account.Manage
                     StatusMessage = "Unexpected error when trying to set phone number.";
                     return RedirectToPage();
                 }
+            }
+
+
+            // Save the user with the updated profile picture path
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+            {
+                StatusMessage = "Unexpected error when trying to set profile picture.";
+                return RedirectToPage();
             }
 
             await _signInManager.RefreshSignInAsync(user);
