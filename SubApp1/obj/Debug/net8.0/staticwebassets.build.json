@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RLAmNTY9KklBZc0rL0AwlquhZUIH1at4sBQ7/bTRBeA=",
+  "Hash": "NLu6a9PZb1L4m1l0pVjxqI6RIAVAKdSa1lxYFXx+H30=",
   "Source": "SubApp1",
   "BasePath": "_content/SubApp1",
   "Mode": "Default",
@@ -1252,6 +1252,25 @@
       "OriginalItemSpec": "wwwroot\\Images\\243xe4ho.h0i638682324223715764.png"
     },
     {
+      "Identity": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\3noxsp4c.eki638682509447789953.jpeg",
+      "SourceId": "SubApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\",
+      "BasePath": "_content/SubApp1",
+      "RelativePath": "Images/3noxsp4c.eki638682509447789953.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\3noxsp4c.eki638682509447789953.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\ce5sirlj.hpf638682508187509210.jpg",
       "SourceId": "SubApp1",
       "SourceType": "Discovered",
@@ -1326,6 +1345,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\kl4goilz.dtn638667087453104065.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\kpynczpz.cmb638682587972582250.jpeg",
+      "SourceId": "SubApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\",
+      "BasePath": "_content/SubApp1",
+      "RelativePath": "Images/kpynczpz.cmb638682587972582250.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\kpynczpz.cmb638682587972582250.jpeg"
     },
     {
       "Identity": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\nsmd5fi2.thl638682508897864419.jpeg",

@@ -134,7 +134,7 @@ var post = new Post
                 return Unauthorized();
             }
 
-            return View(post);
+            return View("~/Views/Home/EditPost.cshtml", post);
         }
 
         // POST: Confirm editing a post
