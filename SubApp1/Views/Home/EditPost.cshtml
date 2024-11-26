@@ -1,0 +1,20 @@
+@model SubApp1.Models.Post
+
+@{
+    ViewData["Title"] = "Edit Post";
+}
+
+<h2>Edit Post</h2>
+
+<form asp-action="EditPost" asp-controller="Profile" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="id" value="@Model.Id" />
+    
+    <label for="post-content">Content:</label>
+    <textarea id="post-content" name="PostContent">@Model.Content</textarea>
+
+    <label for="post-image">Upload New Image:</label>
+    <input type="file" id="post-image" name="PostImage" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+</form>
