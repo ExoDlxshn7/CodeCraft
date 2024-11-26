@@ -33,13 +33,24 @@
             <div id="container-post">
                 <div id="post-header">
                     <div id="post-pp">
-                        <img alt="Profile picture" id="pp-content" src="
-                        @post.User.ProfilePic
-                        ">
+
                     </div>
-                    <div id="post-profile">
-                        @post.User.UserName
-                    </div>
+
+@if (post.User != null)
+{
+    <div id="post-profile">
+        @post.User.UserName
+    </div>
+    <img alt="Profile picture" id="pp-content" src="@post.User.ProfilePic">
+}
+else
+{
+    <div id="post-profile">
+        User unknown
+    </div>
+    <img alt="Profile picture" id="pp-content" src="path/to/default/image">
+}
+
                     <div id="post-posted">
                         <span>@post.CreatedAt.ToString("MMM dd") <br>at @post.CreatedAt.ToString("HH:mm")</span>
                     </div>

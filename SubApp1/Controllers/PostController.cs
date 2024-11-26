@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using System.Security.Claims;
 
 public class PostController : Controller
 {
@@ -31,7 +32,7 @@ public class PostController : Controller
         {
             Content = PostContent,
             CreatedAt = DateTime.Now,
-            UserId = 4,
+            UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
         };
 
         if (PostImage != null)

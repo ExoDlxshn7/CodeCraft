@@ -33,10 +33,10 @@ namespace SubApp1.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userId)) return Unauthorized();
 
-            var userPosts = _userDbcontext.Posts
-                .Where(p => p.UserId == int.Parse(userId))
-                .OrderByDescending(p => p.CreatedAt)
-                .ToList();
+var userPosts = _userDbcontext.Posts
+    .Where(p => p.UserId == userId) // remove the int.Parse() call
+    .OrderByDescending(p => p.CreatedAt)
+    .ToList();
 
             return View("Profile", userPosts);
         }
@@ -107,13 +107,13 @@ namespace SubApp1.Controllers
                 }
             }
 
-            var post = new Post
-            {
-                Content = postContent,
-                CreatedAt = DateTime.Now,
-                UserId = int.Parse(userId),
-                ImageUrl = imageUrl
-            };
+var post = new Post
+{
+    Content = postContent,
+    CreatedAt = DateTime.Now,
+    UserId = userId, // remove the int.Parse() call
+    ImageUrl = imageUrl
+};
 
             _userDbcontext.Posts.Add(post);
             _userDbcontext.SaveChanges();
@@ -129,7 +129,7 @@ namespace SubApp1.Controllers
             var post = _userDbcontext.Posts.Find(id);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (post == null || string.IsNullOrEmpty(userId) || post.UserId != int.Parse(userId))
+            if (post == null || string.IsNullOrEmpty(userId) || post.UserId != userId)
             {
                 return Unauthorized();
             }
@@ -145,7 +145,7 @@ namespace SubApp1.Controllers
             var post = _userDbcontext.Posts.Find(id);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (post == null || string.IsNullOrEmpty(userId) || post.UserId != int.Parse(userId))
+            if (post == null || string.IsNullOrEmpty(userId) || post.UserId != userId)
             {
                 return Unauthorized();
             }
@@ -183,7 +183,7 @@ namespace SubApp1.Controllers
             var post = _userDbcontext.Posts.Find(id);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (post == null || string.IsNullOrEmpty(userId) || post.UserId != int.Parse(userId))
+            if (post == null || string.IsNullOrEmpty(userId) || post.UserId != userId)
             {
                 return Unauthorized();
             }
