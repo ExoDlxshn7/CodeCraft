@@ -38,7 +38,7 @@ var userPosts = _userDbcontext.Posts
     .OrderByDescending(p => p.CreatedAt)
     .ToList();
 
-            return View("Profile", userPosts);
+            return View("~/Views/Home/Index.cshtml", userPosts);
         }
 
         // GET: Show the Edit Profile page
@@ -172,7 +172,7 @@ var post = new Post
             _userDbcontext.Posts.Update(post);
             _userDbcontext.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Profile");
         }
 
         // POST: Delete a post

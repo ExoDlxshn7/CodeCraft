@@ -9,8 +9,16 @@
       "PackagePath": "staticwebassets\\Images\\243xe4ho.h0i638682324223715764.png"
     },
     {
+      "Id": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\2tagq5dk.e3e638682619356161948.jpg",
+      "PackagePath": "staticwebassets\\Images\\2tagq5dk.e3e638682619356161948.jpg"
+    },
+    {
       "Id": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\3noxsp4c.eki638682509447789953.jpeg",
       "PackagePath": "staticwebassets\\Images\\3noxsp4c.eki638682509447789953.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\4il5bdqm.ugy638682608870721039.jpeg",
+      "PackagePath": "staticwebassets\\Images\\4il5bdqm.ugy638682608870721039.jpeg"
     },
     {
       "Id": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\ce5sirlj.hpf638682508187509210.jpg",
@@ -47,6 +55,10 @@
     {
       "Id": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\quy2kjsl.44y638667085033516780.jpg",
       "PackagePath": "staticwebassets\\Images\\quy2kjsl.44y638667085033516780.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\Images\\tmtoo5p3.1jb638682640630138715.jpg",
+      "PackagePath": "staticwebassets\\Images\\tmtoo5p3.1jb638682640630138715.jpg"
     },
     {
       "Id": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\css\\site.css",
@@ -287,6 +299,10 @@
     {
       "Id": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\fatta\\OneDrive\\Dokumenter\\Studie\\Høst2024\\ITPE3200Webapplikasjoner\\Eksammen\\CodeCraft\\SubApp1\\wwwroot\\uploads\\Somi1.png",
+      "PackagePath": "staticwebassets\\uploads\\Somi1.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SubApp1.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -30,10 +30,17 @@
             <div id="container-post">
                 <div id="post-header">
                     <div id="post-pp">
-                        <img alt="Profile picture" id="pp-content" src="@post.User.ProfilePic">
+                        <img alt="Profile picture" id="pp-content"src="@(post.User?.ProfilePic ?? "/images/default-profile.png")" / >
                     </div>
                     <div id="post-profile">
-                        @post.User.UserName
+                        @if (post.User != null)
+    {
+        @post.User.UserName
+    }
+    else
+    {
+        <span>Unknown User</span>
+    } 
                     </div>
                     <div id="post-posted">
                         <span>@post.CreatedAt.ToString("MMM dd") <br>at @post.CreatedAt.ToString("HH:mm")</span>
