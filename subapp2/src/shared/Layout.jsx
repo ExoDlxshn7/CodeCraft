@@ -12,7 +12,7 @@ const Layout = () => {
             <div className="navbar-nav ml-auto">
               <Link className="nav-item nav-link" to="/">Home</Link>
               <Link className="nav-item nav-link" to="/profile">Profile</Link>
-              <Link className="nav-item nav-link" to="/signup">Sign Up</Link>
+              <Link className="nav-item nav-link" to="/signup">Loginn</Link>
             </div>
           </div>
         </nav>
@@ -20,13 +20,10 @@ const Layout = () => {
 
       <div className="container">
         <main role="main" className="pb-3">
-          <Outlet /> {/* Dynamisk plass for innhold */}
+          <Outlet /> 
         </main>
       </div>
 
-      <footer className="text-center py-4 border-top">
-        <p>&copy; 2024 CodeCraft. All Rights Reserved.</p>
-      </footer>
     </div>
   );
 };
