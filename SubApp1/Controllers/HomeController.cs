@@ -23,23 +23,18 @@ public class HomeController : Controller
         return View(posts);
     }
 
-public IActionResult Profile()
-{
-    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-    if (string.IsNullOrEmpty(userId)) return Unauthorized();
-
-    var userPosts = _context.Posts
-        .Where(p => p.UserId == userId)
-        .Include(p => p.User)
-        .OrderByDescending(p => p.CreatedAt)
-        .ToList();
-
-    return View(userPosts);
-}
-
-    public IActionResult signup()
+    public IActionResult Profile()
     {
-        return View();
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userId)) return Unauthorized();
+
+        var userPosts = _context.Posts
+            .Where(p => p.UserId == userId)
+            .Include(p => p.User)
+            .OrderByDescending(p => p.CreatedAt)
+            .ToList();
+
+        return View(userPosts);
     }
     
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

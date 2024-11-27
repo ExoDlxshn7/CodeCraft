@@ -59,13 +59,13 @@
                         <span id="post-choice"><a href="#"><i class="fa-regular fa-share-from-square"></i> Share</a></span>
                     </div>
         <!-- Edit Button -->
-        <form asp-action="EditPost" asp-controller="Profile" method="get" style="display:inline;">
+        <form asp-action="EditPost" asp-controller="Post" method="get" style="display:inline;">
             <input type="hidden" name="id" value="@post.Id" />
             <button type="submit" id="post-edit-button">Edit</button>
         </form>
 
         <!-- Delete Button -->
-        <form asp-action="DeletePost" asp-controller="Profile" method="post" style="display:inline;">
+        <form asp-action="DeletePost" asp-controller="Post" method="post" style="display:inline;">
             @Html.AntiForgeryToken()
             <input type="hidden" name="id" value="@post.Id" />
             <button type="submit" id="post-delete-button" onclick="return confirm('Are you sure you want to delete this post?');">Delete</button>

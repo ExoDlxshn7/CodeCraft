@@ -8,22 +8,9 @@
 
 <body>
     <div id="profile-container-left">
-
+        
     </div>
-    
     <div id="profile-container-right">
-        <!-- Post Creation Area -->
-        <div id="container-post">
-            <div id="post-area">
-                <form asp-action="CreatePost" asp-controller="Post" method="post" enctype="multipart/form-data">
-                    @Html.AntiForgeryToken()
-                    <textarea id="post-textarea" name="PostContent" placeholder="Write something"></textarea>
-                    <input type="file" id="post-image" name="PostImage" accept="image/*" />
-                    <button id="post-button" type="submit">Post</button>
-                </form>
-            </div>
-        </div>
-
         <!-- User's Posts Display Area -->
        @foreach (var post in Model)
         {
@@ -34,13 +21,13 @@
                     </div>
                     <div id="post-profile">
                         @if (post.User != null)
-    {
-        @post.User.UserName
-    }
-    else
-    {
-        <span>Unknown User</span>
-    } 
+                        {
+                            @post.User.UserName
+                        }
+                        else
+                        {
+                            <span>Unknown User</span>
+                        }   
                     </div>
                     <div id="post-posted">
                         <span>@post.CreatedAt.ToString("MMM dd") <br>at @post.CreatedAt.ToString("HH:mm")</span>

@@ -10,6 +10,6 @@ public class UserDbContext : IdentityDbContext<User>
        Database.EnsureCreated();
 	}
 
-	public new DbSet<User> Users { get; set; }
+	public new DbSet<User>? Users { get; set; }
 	public DbSet<Post> Posts { get; set; }
 }
