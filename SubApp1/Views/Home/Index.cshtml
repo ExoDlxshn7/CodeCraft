@@ -45,9 +45,21 @@
 
                     <div id="post-interaction">
                         <span id="post-choice"><a href="#"><i class="fa-regular fa-heart"></i> Like</a></span>
-                        <span id="post-choice"><a href="#"><i class="fa-regular fa-comment"></i> Comment</a></span>
+                        <span>
+                            <form asp-action="AddComment" asp-controller="Comment" method="post">
+                                <input type="hidden" name="postId" value="@post.Id" />
+                                <textarea name="content" placeholder="Write a comment..." required></textarea>
+                                <button type="submit">Add Comment</button>
+                            </form>
+                        </span>
                         <span id="post-choice"><a href="#"><i class="fa-regular fa-star"></i> Favorite</a></span>
                         <span id="post-choice"><a href="#"><i class="fa-regular fa-share-from-square"></i> Share</a></span>
+                    </div>
+                     <div id="comments-section">
+                        <h4>Comments</h4>
+                        <ul>
+                           
+                        </ul>
                     </div>
                 </div>
             </div>
