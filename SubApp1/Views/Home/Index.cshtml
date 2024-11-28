@@ -17,12 +17,12 @@
             <div id="container-post">
                 <div id="post-header">
                     <div id="post-pp">
-                        <img alt="Profile picture" id="pp-content"src="@(post.User?.ProfilePic ?? "/images/default-profile.png")" / >
+                        <img alt="Profile picture" id="pp-content"src="@(post.Users?.ProfilePic ?? "/images/default-profile.png")" / >
                     </div>
                     <div id="post-profile">
-                        @if (post.User != null)
+                        @if (post.Users != null)
                         {
-                            @post.User.UserName
+                            @post.Users.UserName
                         }
                         else
                         {
@@ -48,7 +48,7 @@
                         <span>
                             <form asp-action="AddComment" asp-controller="Comment" method="post">
                                 <input type="hidden" name="postId" value="@post.Id" />
-                                <textarea name="content" placeholder="Write a comment..." required></textarea>
+                                <textarea name="comments" placeholder="Write a comment..." required></textarea>
                                 <button type="submit">Add Comment</button>
                             </form>
                         </span>
@@ -57,9 +57,22 @@
                     </div>
                      <div id="comments-section">
                         <h4>Comments</h4>
+                        @if (post.Comments != null && post.Comments.Any())
+                        {
                         <ul>
-                           
+                             @foreach (var comment in post.Comments)
+                            {
+                                <li>
+                                    <strong>@comment.Users.UserName:</strong> @comment.Comments
+                                    <span>@comment.CreatedAt.ToString("MMM dd, HH:mm")</span>
+                                </li>
+                            }   
                         </ul>
+                        }
+                        else
+                        {
+                            <p>No comments yet.</p>
+                        }
                     </div>
                 </div>
             </div>

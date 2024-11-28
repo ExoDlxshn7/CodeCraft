@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SubApp1.Models;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 
 namespace SubApp1.Controllers
 {

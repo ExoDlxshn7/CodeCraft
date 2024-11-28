@@ -6,21 +6,15 @@ namespace SubApp1.Models
 {
     public class Comment
     {
-        [Key]
         public int Id { get; set; }
-
-        [Required]
         public string? Comments { get; set; }
-
         public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
-        [Required]
-        public string? UserId { get; set; } // Foreign key to the user who made the comment
+        public string? UserId { get; set; } 
+        public int PostId { get; set; } 
 
-        [Required]
-        public int PostId { get; set; } // Foreign key to the related post
-
-        [ForeignKey("PostId")]
-        public virtual Post? Post { get; set; } // Navigation property to the Post
+        public virtual Post? Posts { get; set; } 
+        public virtual User? Users { get; set; }
     }
 }

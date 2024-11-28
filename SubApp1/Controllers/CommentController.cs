@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using SubApp1.Models; // Assuming the models are in this namespace
+using SubApp1.Models;
+using System.Security.Claims; 
 
 namespace SubApp1.Controllers
 {
@@ -17,6 +17,8 @@ namespace SubApp1.Controllers
         [HttpPost]
         public IActionResult AddComment(int postId, string comments)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             if (string.IsNullOrWhiteSpace(comments))
                 {
                     return BadRequest("Comment content cannot be empty.");
@@ -30,13 +32,14 @@ namespace SubApp1.Controllers
             var comment = new Comment
             {
                 PostId = postId,
+                UserId = userId,
                 Comments = comments,
-                CreatedAt = DateTime.Now,
-                UserId = User.Identity.Name // Assuming User.Identity.Name holds the current user's ID
+                CreatedAt = DateTime.Now
             };
+
             _context.Comments.Add(comment);
             _context.SaveChanges();
-            return RedirectToAction("Index", "Post");
+            return RedirectToAction("Index", "Home");
         }
 
         // Edit a comment

@@ -19,7 +19,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var posts = _context.Posts.Include(p => p.User).OrderByDescending(p => p.CreatedAt).ToList();
+        var posts = _context.Posts.Include(p => p.Users).OrderByDescending(p => p.CreatedAt).ToList();
+        var comments = _context.Posts.Include(p => p.Comments).OrderByDescending(p => p.CreatedAt).ToList();
         return View(posts);
     }
 
@@ -30,7 +31,7 @@ public class HomeController : Controller
 
         var userPosts = _context.Posts
             .Where(p => p.UserId == userId)
-            .Include(p => p.User)
+            .Include(p => p.Users)
             .OrderByDescending(p => p.CreatedAt)
             .ToList();
 

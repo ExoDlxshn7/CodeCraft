@@ -33,10 +33,10 @@
             <div id="container-post">
                 <div id="post-header">
                     <div id="post-pp">
-                        <img alt="Profile picture" id="pp-content" src="@post.User.ProfilePic">
+                        <img alt="Profile picture" id="pp-content" src="@post.Users.ProfilePic">
                     </div>
                     <div id="post-profile">
-                        @post.User.UserName
+                        @post.Users.UserName
                     </div>
                     <div id="post-posted">
                         <span>@post.CreatedAt.ToString("MMM dd") <br>at @post.CreatedAt.ToString("HH:mm")</span>
