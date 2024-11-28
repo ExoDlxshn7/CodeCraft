@@ -19,9 +19,14 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var posts = _context.Posts.Include(p => p.Users).OrderByDescending(p => p.CreatedAt).ToList();
-        var comments = _context.Posts.Include(p => p.Comments).OrderByDescending(p => p.CreatedAt).ToList();
-        return View(posts);
+        var posts = _context.Posts
+            .Include(p => p.Users) // Include the related Users (for the post author)
+            .Include(p => p.Comments) // Include the related Comments
+            .ThenInclude(c => c.Users) // Optionally, include the user who made the comment
+            .OrderByDescending(p => p.CreatedAt) // Order posts by creation date
+            .ToList();
+
+        return View(posts); // Pass the posts (with users and comments) to the view
     }
 
     public IActionResult Profile()
