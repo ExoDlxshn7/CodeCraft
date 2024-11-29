@@ -1,0 +1,183 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#profile-container-left {
+  width:30%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
+}
+
+#profile-container-right {
+  width: 60%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
+}
+
+#navbar-item{
+  color:black;
+  text-decoration-line: none;
+  font-weight: bold;
+}
+
+#container-post {
+  width: 100%;
+  margin-bottom:25px;
+  background-color:#383434;
+  border-radius:5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color:white;
+}
+
+#container-post a {
+  text-decoration-line: none;
+  color:white;
+}
+
+#post-header {
+  width:100%;
+  background-color:#100c0c;
+  border-radius: 5px 5px 0 0;
+  padding:15px;
+  margin: 0;
+}
+
+#post-pp {
+  display:inline-block;
+}
+
+#pp-content {
+  width:50px;
+  height:50px;
+  border-radius:25px;
+}
+
+#post-profile {
+  display:inline-block;
+  margin-left:10px;
+}
+
+#post-contents {
+  background-color:#383434;
+  padding:15px;
+  margin:0;
+  border-radius: 0 0 5px 5px;
+}
+
+#photo{
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
+  object-fit:cover;
+  border-radius:5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#post-area {
+  padding:15px;
+}
+
+#post-textarea {
+  background-color:#383434;
+  color:white;
+  width:90%;
+  overflow:hidden;
+  display:inline-block;
+  vertical-align: top;
+  border:none;
+  resize: none;
+  outline: none;
+}
+
+#post-button {
+  border-radius:25px;
+  background-color:#100c0c;
+  color:white;
+  padding:5px 10px;
+  float:right;
+}
+
+#post-interaction {
+  margin-top: 15px;
+  display:inline-block;
+}
+
+#post-choice {
+  margin-right: 15px;
+}
+
+#post-posted {
+  float:right;
+  text-align: right;
+  color:#d5d5d5;
+}
+
+html {
+  font-size: 3vw;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+#container-left {
+  width:100%;
+  display: block;
+  margin: 0 auto;
+}
+
+#container-right {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  #container-left, #container-right {
+    display: inline-block;
+    vertical-align: top;
+    #container-left {
+      width: 30%;
+    }
+    #container-right {
+      width: 60%;
+    }
+  }
+}
+
+#left-50, #right-50 {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  #left-50, #right-50 {
+    width: 45%;
+    display: inline-block;
+  }
+}

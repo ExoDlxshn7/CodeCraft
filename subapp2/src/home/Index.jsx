@@ -6,7 +6,6 @@ import App from './App';
 const Index = () => {
     const [posts, setPosts] = useState([]);
 
-    // Hent innlegg fra API
     useEffect(() => {
         fetch('/api/posts') // Endre til riktig API-endepunkt
             .then(response => response.json())
