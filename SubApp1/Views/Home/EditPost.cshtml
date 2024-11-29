@@ -11,7 +11,6 @@
 <h2>Edit Post</h2>
 
 <form asp-action="EditPost" asp-controller="Post" method="post" enctype="multipart/form-data">
-    @Html.AntiForgeryToken()
     <input type="hidden" name="id" value="@Model.Id" />
 
     <label for="post-content">Content:</label>
