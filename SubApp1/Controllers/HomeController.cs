@@ -37,6 +37,8 @@ public class HomeController : Controller
         var userPosts = _context.Posts
             .Where(p => p.UserId == userId)
             .Include(p => p.Users)
+            .Include(p => p.Comments)
+            .ThenInclude(c => c.Users)
             .OrderByDescending(p => p.CreatedAt)
             .ToList();
 

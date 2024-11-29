@@ -1,3 +1,4 @@
+@using System.Security.Claims
 @model IEnumerable<SubApp1.Models.Post>
 
 @{
@@ -15,7 +16,6 @@
     </div>
     
     <div id="profile-container-right">
-        <!-- Post Creation Area -->
         <div id="container-post">
             <div id="post-area">
                 <form asp-action="CreatePost" asp-controller="Post" method="post" enctype="multipart/form-data">
@@ -27,13 +27,12 @@
             </div>
         </div>
 
-        <!-- User's Posts Display Area -->
        @foreach (var post in Model)
         {
             <div id="container-post">
                 <div id="post-header">
                     <div id="post-pp">
-                        <img alt="Profile picture" id="pp-content" src="@post.Users.ProfilePic">
+                        <img alt="Profile picture" id="pp-content" src="@(post.Users?.ProfilePic ?? "/Images/default-profile.jpg")" / >
                     </div>
                     <div id="post-profile">
                         @post.Users.UserName
@@ -54,17 +53,66 @@
 
                     <div id="post-interaction">
                         <span id="post-choice"><a href="#"><i class="fa-regular fa-heart"></i> Like</a></span>
-                        <span id="post-choice"><a href="#"><i class="fa-regular fa-comment"></i> Comment</a></span>
+                        <span id="post-choice">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <form asp-action="AddComment" asp-controller="Comment" method="post">
+                                    <input type="hidden" name="postId" value="@post.Id" />
+                                    <textarea name="comments" placeholder="Write a comment..." required></textarea>
+                                    <button type="submit">Add Comment</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <p>You must be logged in to write a comment.</p>
+                                <p><a class="nav-link text-light" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a></p>
+                            }
+                        </span>
                         <span id="post-choice"><a href="#"><i class="fa-regular fa-star"></i> Favorite</a></span>
                         <span id="post-choice"><a href="#"><i class="fa-regular fa-share-from-square"></i> Share</a></span>
                     </div>
-        <!-- Edit Button -->
+                    <div id="comments-section">
+                        <h4>Comments</h4>
+                        @if (post.Comments != null && post.Comments.Any())
+                        {
+                        <ul>
+                             @foreach (var comment in post.Comments)
+                            {
+                                <li>
+                                    <strong>@comment?.Users?.UserName:</strong> @comment.Comments
+                                    <span>@comment.CreatedAt.ToString("MMM dd, HH:mm")</span>
+
+                                    @if (comment.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier) || post.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                                    {
+                                        <button type="button" onclick="showEditForm(@comment.Id)">Edit</button>
+
+                                        <!-- The edit form (hidden initially) -->
+                                        <form id="edit-form-@comment.Id" style="display:none;" asp-action="EditComment" asp-controller="Comment" method="post">
+                                            <input type="hidden" name="commentId" value="@comment.Id" />
+                                            <textarea name="comments" placeholder="Edit your comment..." required>@comment.Comments</textarea>
+                                            <button type="submit">Save Changes</button>
+                                        </form>
+
+                                        <form asp-action="DeleteComment" asp-controller="Comment" method="post" style="display:inline;">
+                                            <input type="hidden" name="commentId" value="@comment.Id" />
+                                            <button type="submit" onclick="return confirm('Are you sure you want to delete this comment?');">Delete</button>
+                                        </form>
+                                    }
+                                </li>
+                            }   
+                        </ul>
+                        }
+                        else
+                        {
+                            <p>No comments yet.</p>
+                        }
+                    </div>
+                    
         <form asp-action="EditPost" asp-controller="Post" method="get" style="display:inline;">
             <input type="hidden" name="id" value="@post.Id" />
             <button type="submit" id="post-edit-button">Edit</button>
         </form>
 
-        <!-- Delete Button -->
         <form asp-action="DeletePost" asp-controller="Post" method="post" style="display:inline;">
             <input type="hidden" name="id" value="@post.Id" />
             <button type="submit" id="post-delete-button" onclick="return confirm('Are you sure you want to delete this post?');">Delete</button>
