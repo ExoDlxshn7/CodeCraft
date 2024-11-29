@@ -52,7 +52,7 @@ namespace SubApp1.Controllers
         [HttpPost]
         public IActionResult DeleteComment(int commentId)
         {
-            var comment = _context.Comments.FirstOrDefault(c => c.Id == commentId);
+            var comment = _context.Comments.Find(commentId);
 
             _context.Comments.Remove(comment);
             _context.SaveChanges();
