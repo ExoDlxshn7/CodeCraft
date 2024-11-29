@@ -9,7 +9,7 @@
 
 <body>
     <div id="profile-container-left">
-        <img id="profile-picture" src="https://i.imgur.com/Z8k08or.png">
+        <img id="profile-picture" src="@(ViewData["ProfilePicUrl"] ?? "/Images/default-profile.jpg")">
         <div id="navbar-left">
             <a id="navbar-item" asp-area="Identity" asp-page="/Account/Manage/Index">Edit Profile</a><br>
         </div>
@@ -107,7 +107,7 @@
                             <p>No comments yet.</p>
                         }
                     </div>
-                    
+
         <form asp-action="EditPost" asp-controller="Post" method="get" style="display:inline;">
             <input type="hidden" name="id" value="@post.Id" />
             <button type="submit" id="post-edit-button">Edit</button>

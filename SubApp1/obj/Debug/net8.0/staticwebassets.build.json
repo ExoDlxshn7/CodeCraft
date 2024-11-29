@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wLVKb0CgztsyTBqZX5w/W/Dyl1U/4wRUpoJrvZS9Mo0=",
+  "Hash": "akojTMfRZSvx+4zmJQG74/8arddhF3qpqJZzBPLJpwc=",
   "Source": "SubApp1",
   "BasePath": "_content/SubApp1",
   "Mode": "Default",
@@ -1497,6 +1497,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\profile_mu1fu0qy.541638682352465422474.png"
+    },
+    {
+      "Identity": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\Images\\profile_trdj0qvw.t0y638685234780193273.png",
+      "SourceId": "SubApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\",
+      "BasePath": "_content/SubApp1",
+      "RelativePath": "Images/profile_trdj0qvw.t0y638685234780193273.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\profile_trdj0qvw.t0y638685234780193273.png"
     },
     {
       "Identity": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\Images\\quy2kjsl.44y638667085033516780.jpg",

@@ -42,6 +42,11 @@ public class HomeController : Controller
             .OrderByDescending(p => p.CreatedAt)
             .ToList();
 
+            var user = _context.Users.Find(userId);
+            var profilePicUrl = user.ProfilePic;
+
+            ViewData["ProfilePicUrl"] = profilePicUrl;
+
         return View(userPosts);
     }
     
