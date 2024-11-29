@@ -1,11 +1,13 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SubApp1.Models;
+using SubApp2.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
-namespace SubApp1.Controllers;
+namespace SubApp2.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

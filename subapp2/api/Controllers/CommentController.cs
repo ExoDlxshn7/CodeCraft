@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using SubApp1.Models;
+using SubApp2.Models;
 using System.Security.Claims; 
 
-namespace SubApp1.Controllers
+namespace SubApp2.Controllers
 {
     public class CommentController : Controller
     {

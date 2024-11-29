@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
-using SubApp1.Models;
+using SubApp2.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
-namespace SubApp1.Controllers
+namespace SubApp2.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class PostController : Controller
     {
         private readonly IWebHostEnvironment _env;
@@ -16,6 +19,8 @@ namespace SubApp1.Controllers
             _env = env;
         }
 
+        // POST: api/Post
+        [Authorize]
         [HttpPost]
         public IActionResult CreatePost(string PostContent, IFormFile PostImage)
         {
@@ -47,9 +52,12 @@ namespace SubApp1.Controllers
             return RedirectToAction("Profile", "Home");
         }
 
+
         // GET: Show the Edit Post page
-            [Authorize]
-            [HttpGet]
+        
+        [HttpGet("{id}")]
+        [Authorize]
+           
             public IActionResult EditPost(int id)
             {
                 var post = _userDbcontext.Posts.Find(id);

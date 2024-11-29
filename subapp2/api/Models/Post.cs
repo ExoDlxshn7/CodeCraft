@@ -1,8 +1,8 @@
 using System;
 using System.ComponentModel.DataAnnotations; 
-using SubApp1.Models;
+using SubApp2.Models;
 
-namespace SubApp1.Models
+namespace SubApp2.Models
 {
     public class Post
     {
