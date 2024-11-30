@@ -137,8 +137,84 @@ body {
 
 #post-interaction {
   margin-top: 15px;
-  display:inline-block;
+  justify-content: space-between; 
+  align-items: center; 
 }
+
+#comments-section ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+#comments-section li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+ 
+}
+
+#comments-section li strong {
+  margin-right: 10px;
+}
+
+#comments-section form {
+  margin-top: 10px;
+}
+
+button {
+  background-color: #007bff; 
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; 
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+textarea, input[type="text"] {
+  width: 100%; 
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #101010;
+  border-radius: 4px;
+  resize: none; 
+}
+
+textarea:focus, input:focus {
+  border-color: #007bff; 
+  outline: none; 
+}
+
+#post-interaction, #comments-section {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #100f0f; 
+  border: 1px solid #1c1b1b;
+  border-radius: 5px;
+}
+
+#comments-section h4 {
+  margin-bottom: 10px;
+  color: #f2eeee;
+  font-size: 1.2em;
+ 
+}
+
+
+
 
 #post-choice {
   margin-right: 15px;
