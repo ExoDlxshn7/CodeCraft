@@ -17,7 +17,37 @@ namespace SubApp1.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreatePost(string PostContent, IFormFile PostImage)
+        public IActionResult CreatePostIndex(string PostContent, IFormFile PostImage)
+        {
+            var post = new Post
+            {
+                Content = PostContent,
+                CreatedAt = DateTime.Now,
+                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
+            };
+
+            if (PostImage != null)
+            {
+                var fileName = "";
+                do
+                {
+                    fileName = Path.Combine(_env.WebRootPath, "Images", Path.GetRandomFileName() + DateTime.Now.Ticks + Path.GetExtension(PostImage.FileName));
+                } while (System.IO.File.Exists(fileName));
+
+                using (var fileStream = new FileStream(fileName, FileMode.Create))
+                {
+                    PostImage.CopyTo(fileStream);
+                }
+                post.ImageUrl = "/Images/" + Path.GetFileName(fileName);
+            }
+
+            _userDbcontext.Posts.Add(post);
+            _userDbcontext.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
+        }
+
+                public IActionResult CreatePostProfile(string PostContent, IFormFile PostImage)
         {
             var post = new Post
             {
