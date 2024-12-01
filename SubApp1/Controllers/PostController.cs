@@ -18,36 +18,6 @@ namespace SubApp1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreatePostIndex(string PostContent, IFormFile? PostImage)
-        {
-            if (string.IsNullOrEmpty(PostContent))
-            {
-                ModelState.AddModelError("PostContent", "Post content is required.");
-                return View(new Post { Content = PostContent });
-            }
-
-            var post = new Post
-            {
-                Content = PostContent,
-                CreatedAt = DateTime.Now,
-                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
-            };
-
-            if (PostImage != null)
-            {
-                var fileName = Path.Combine(_env.WebRootPath, "Images", Path.GetRandomFileName() + Path.GetExtension(PostImage.FileName));
-                using (var fileStream = new FileStream(fileName, FileMode.Create))
-                {
-                    await PostImage.CopyToAsync(fileStream);
-                }
-                post.ImageUrl = "/Images/" + Path.GetFileName(fileName);
-            }
-
-            await _postRepository.AddPostAsync(post);
-            return RedirectToAction("Index", "Home");
-        }
-
-        [HttpPost]
         public async Task<IActionResult> CreatePostProfile(string PostContent, IFormFile PostImage)
         {
             var post = new Post
