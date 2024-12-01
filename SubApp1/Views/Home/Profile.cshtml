@@ -31,10 +31,10 @@
             <div id="container-post">
                 <div id="post-header">
                     <div id="post-pp">
-                        <img alt="Profile picture" id="pp-content" src="@(post.Users?.ProfilePic ?? "/Images/default-profile.jpg")" / >
+                        <img alt="Profile picture" id="pp-content" src="@(post.Users?.ProfilePic ?? "/Images/default-profile.jpg")" />
                     </div>
                     <div id="post-profile">
-                        @post.Users.UserName
+                        @post.Users?.UserName
                     </div>
                     <div id="post-posted">
                         <span>@post.CreatedAt.ToString("MMM dd") <br>at @post.CreatedAt.ToString("HH:mm")</span>
@@ -75,22 +75,22 @@
                              @foreach (var comment in post.Comments)
                             {
                                 <li>
-                                    <strong>@comment?.Users?.UserName:</strong> @comment.Comments
-                                    <span>@comment.CreatedAt.ToString("MMM dd, HH:mm")</span>
+                                    <strong>@comment?.Users?.UserName:</strong> @comment?.Comments
+                                    <span>@comment?.CreatedAt.ToString("MMM dd, HH:mm")</span>
 
-                                    @if (comment.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                                    @if (comment?.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
                                     {
                                         <button type="button" onclick="showEditForm(@comment.Id)">Edit</button>
 
                                         <!-- The edit form (hidden initially) -->
                                         <form id="edit-form-@comment.Id" style="display:none;" asp-action="EditCommentProfile" asp-controller="Comment" method="post">
                                             <input type="hidden" name="commentId" value="@comment.Id" />
-                                            <textarea name="comments" placeholder="Edit your comment..." required>@comment.Comments</textarea>
+                                            <textarea name="comments" placeholder="Edit your comment..." required>@comment?.Comments</textarea>
                                             <button type="submit">Save Changes</button>
                                         </form>
                                     }
 
-                                    @if (comment.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier) || post.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                                    @if (comment?.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier) || post.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
                                     {
                                         <form asp-action="DeleteCommentProfile" asp-controller="Comment" method="post" style="display:inline;">
                                             <input type="hidden" name="commentId" value="@comment.Id" />

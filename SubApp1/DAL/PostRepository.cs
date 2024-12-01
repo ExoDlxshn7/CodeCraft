@@ -18,7 +18,7 @@ namespace SubApp1.DAL
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Post> GetPostByIdAsync(int id)
+        public async Task<Post?> GetPostByIdAsync(int id)
         {
             return await _context.Posts.FindAsync(id);
         }
