@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aAvsxRPXslSoL9kJkX/ov7LSWBUovq7yKrfGoMwp8bs=",
+  "Hash": "EyVVFCPEWcfudDxm7Tlh+tsS77mGDehlzRGQItZkdC0=",
   "Source": "SubApp1",
   "BasePath": "_content/SubApp1",
   "Mode": "Default",
@@ -1385,6 +1385,25 @@
       "OriginalItemSpec": "wwwroot\\Images\\ejs4zjtc.c0s.png"
     },
     {
+      "Identity": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\Images\\fk4nyxhj.0dh.png",
+      "SourceId": "SubApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\",
+      "BasePath": "_content/SubApp1",
+      "RelativePath": "Images/fk4nyxhj.0dh.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\fk4nyxhj.0dh.png"
+    },
+    {
       "Identity": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\Images\\gk10c2mp.h5a638682454893997338.png",
       "SourceId": "SubApp1",
       "SourceType": "Discovered",
@@ -1668,6 +1687,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\tmtoo5p3.1jb638682640630138715.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\Images\\w2s15e1o.fgz.png",
+      "SourceId": "SubApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\",
+      "BasePath": "_content/SubApp1",
+      "RelativePath": "Images/w2s15e1o.fgz.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\w2s15e1o.fgz.png"
     },
     {
       "Identity": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\js\\site.js",
@@ -2789,6 +2827,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\img.1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\uploads\\Screenshot 2024-11-11 065326.png",
+      "SourceId": "SubApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\",
+      "BasePath": "_content/SubApp1",
+      "RelativePath": "uploads/Screenshot 2024-11-11 065326.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Screenshot 2024-11-11 065326.png"
     },
     {
       "Identity": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\uploads\\Somi.jpg",
