@@ -18,8 +18,14 @@ namespace SubApp1.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreatePostIndex(string PostContent, IFormFile PostImage)
+        public async Task<IActionResult> CreatePostIndex(string PostContent, IFormFile? PostImage)
         {
+            if (string.IsNullOrEmpty(PostContent))
+            {
+                ModelState.AddModelError("PostContent", "Post content is required.");
+                return View(new Post { Content = PostContent });
+            }
+
             var post = new Post
             {
                 Content = PostContent,
@@ -65,6 +71,17 @@ namespace SubApp1.Controllers
             return RedirectToAction("Profile", "Home");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetPost(int id)
+        {
+            var post = await _postRepository.GetPostByIdAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
+            return View(post);
+        }
+
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> EditPost(int id)
@@ -82,7 +99,7 @@ namespace SubApp1.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> EditPost(int id, string postContent, IFormFile postImage)
+        public async Task<IActionResult> EditPost(int id, string postContent, IFormFile? postImage)
         {
             var post = await _postRepository.GetPostByIdAsync(id);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -120,9 +137,13 @@ namespace SubApp1.Controllers
         public async Task<IActionResult> DeletePost(int id)
         {
             var post = await _postRepository.GetPostByIdAsync(id);
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (post == null)
+            {
+                return NotFound();
+            }
 
-            if (post == null || post.UserId != userId)
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (post.UserId != userId)
             {
                 return Unauthorized();
             }
