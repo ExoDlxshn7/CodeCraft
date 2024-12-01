@@ -10,9 +10,7 @@ const Layout = () => {
           <div className="container">
             <Link className="navbar-brand" to="/">CodeCraft</Link>
             <div className="navbar-nav ml-auto">
-              <Link className="nav-item nav-link" to="/">Home</Link>
               <Link className="nav-item nav-link" to="/profile">Profile</Link>
-              <Link className="nav-item nav-link" to="/signup">Loginn</Link>
             </div>
           </div>
         </nav>
