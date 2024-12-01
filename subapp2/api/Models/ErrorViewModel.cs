@@ -1,4 +1,4 @@
-namespace SubApp2.Models;
+namespace SubApp1.Models;
 
 public class ErrorViewModel
 {

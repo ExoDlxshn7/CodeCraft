@@ -1,13 +1,11 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SubApp2.Models;
+using SubApp1.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
-namespace SubApp2.Controllers;
+namespace SubApp1.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -21,9 +19,14 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var posts = _context.Posts.Include(p => p.Users).OrderByDescending(p => p.CreatedAt).ToList();
-        var comments = _context.Posts.Include(p => p.Comments).OrderByDescending(p => p.CreatedAt).ToList();
-        return View(posts);
+        var posts = _context.Posts
+            .Include(p => p.Users) // Include the related Users (for the post author)
+            .Include(p => p.Comments) // Include the related Comments
+            .ThenInclude(c => c.Users) // Optionally, include the user who made the comment
+            .OrderByDescending(p => p.CreatedAt) // Order posts by creation date
+            .ToList();
+
+        return View(posts); // Pass the posts (with users and comments) to the view
     }
 
     public IActionResult Profile()
@@ -34,8 +37,15 @@ public class HomeController : Controller
         var userPosts = _context.Posts
             .Where(p => p.UserId == userId)
             .Include(p => p.Users)
+            .Include(p => p.Comments)
+            .ThenInclude(c => c.Users)
             .OrderByDescending(p => p.CreatedAt)
             .ToList();
+
+            var user = _context.Users.Find(userId);
+            var profilePicUrl = user.ProfilePic;
+
+            ViewData["ProfilePicUrl"] = profilePicUrl;
 
         return View(userPosts);
     }
