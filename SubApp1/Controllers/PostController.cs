@@ -23,6 +23,18 @@ namespace SubApp1.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePostProfile(string PostContent, IFormFile PostImage)
         {
+    // Check if PostContent is valid
+    if(string.IsNullOrWhiteSpace(PostContent))
+    {
+        // If not valid, return View with Model
+        var invalidPost = new Post
+        {
+            Content = PostContent,
+            UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
+        };
+        return View(invalidPost);
+    }
+
             // Create a new post object
             var post = new Post
             {
