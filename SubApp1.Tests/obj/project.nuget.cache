@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qkH36J1ls04=",
+  "dgSpecHash": "iriC0HLWM+U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.Tests\\SubApp1.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.tests\\SubApp1.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kevol\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\Kevol\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",

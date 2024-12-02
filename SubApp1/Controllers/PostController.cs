@@ -23,15 +23,22 @@ namespace SubApp1.Controllers
         }
 
         // Action method to create a post and redirect to the Profile page
-        [HttpPost]
-        public async Task<IActionResult> CreatePostProfile(string PostContent, IFormFile PostImage)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (string.IsNullOrEmpty(userId))
-            {
-                _logger.LogWarning("Unauthorized attempt to create a post.");
-                return Unauthorized("You must be logged in to create a post.");
-            }
+[HttpPost]
+public async Task<IActionResult> CreatePostProfile(string PostContent, IFormFile PostImage)
+{
+    if (string.IsNullOrEmpty(PostContent))
+    {
+        // If PostContent is null or empty, return the form view with a validation error.
+        ModelState.AddModelError("Content", "Content is required.");
+        return View(new Post { Content = PostContent });
+    }
+
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    if (string.IsNullOrEmpty(userId))
+    {
+        _logger.LogWarning("Unauthorized attempt to create a post.");
+        return Unauthorized("You must be logged in to create a post.");
+    }
             // Create a new post object
             var post = new Post
             {

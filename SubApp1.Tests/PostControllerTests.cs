@@ -10,19 +10,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.Extensions.Logging;
 
 public class PostControllerTests
 {
     private readonly Mock<IPostRepository> _mockRepo;
     private readonly Mock<IWebHostEnvironment> _mockEnv;
+    private readonly Mock<ILogger<PostController>> _mockLogger;
     private readonly PostController _controller;
 
     public PostControllerTests()
     {
         _mockRepo = new Mock<IPostRepository>();
         _mockEnv = new Mock<IWebHostEnvironment>();
+        _mockLogger = new Mock<ILogger<PostController>>();
         _mockEnv.Setup(env => env.WebRootPath).Returns("wwwroot");
-        _controller = new PostController(_mockRepo.Object, _mockEnv.Object);
+        _controller = new PostController(_mockRepo.Object, _mockEnv.Object, _mockLogger.Object);
         _controller.ControllerContext = new ControllerContext
         {
             HttpContext = new DefaultHttpContext

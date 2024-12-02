@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.Tests\\SubApp1.Tests.csproj": {}
+    "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.tests\\SubApp1.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.Tests\\SubApp1.Tests.csproj": {
+    "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.tests\\SubApp1.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.Tests\\SubApp1.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.tests\\SubApp1.Tests.csproj",
         "projectName": "SubApp1.Tests",
-        "projectPath": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.Tests\\SubApp1.Tests.csproj",
+        "projectPath": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.tests\\SubApp1.Tests.csproj",
         "packagesPath": "C:\\Users\\Kevol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.Tests\\obj\\",
+        "outputPath": "C:\\Users\\Kevol\\Desktop\\GitHub\\CodeCraft\\SubApp1.tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kevol\\AppData\\Roaming\\NuGet\\NuGet.Config"

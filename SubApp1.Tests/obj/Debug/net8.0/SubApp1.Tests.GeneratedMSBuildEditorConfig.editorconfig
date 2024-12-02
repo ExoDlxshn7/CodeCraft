@@ -16,6 +16,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SubApp1.Tests
-build_property.ProjectDir = C:\Users\Kevol\Desktop\GitHub\CodeCraft\SubApp1.Tests\
+build_property.ProjectDir = C:\Users\Kevol\Desktop\GitHub\CodeCraft\SubApp1.tests\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
