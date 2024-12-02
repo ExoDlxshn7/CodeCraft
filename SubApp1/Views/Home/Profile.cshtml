@@ -113,7 +113,7 @@
                                 </form>
                             }
 
-                            @if (comment?.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier) || post.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                            @if (comment != null && (comment.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier) || post.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier)))
                             {
                                 <!-- Form for deleting the comment -->
                                 <form asp-action="DeleteCommentProfile" asp-controller="Comment" method="post" style="display:inline;">

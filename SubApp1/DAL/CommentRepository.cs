@@ -18,7 +18,7 @@ namespace SubApp1.DAL
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Comment> GetCommentByIdAsync(int commentId)
+        public async Task<Comment?> GetCommentByIdAsync(int commentId)
         {
             return await _context.Comments.FindAsync(commentId);
         }

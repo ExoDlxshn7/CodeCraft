@@ -14,7 +14,7 @@ namespace SubApp1.Models
         public string? UserId { get; set; } 
         public int PostId { get; set; } 
 
-        public virtual Post? Posts { get; set; } 
-        public virtual User? Users { get; set; }
+        public virtual Post Posts { get; set; } = null!;
+        public virtual User Users { get; set; } = null!;
     }
 }

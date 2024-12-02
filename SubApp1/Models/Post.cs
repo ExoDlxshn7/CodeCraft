@@ -13,8 +13,7 @@ namespace SubApp1.Models
 
         public string? ImageUrl { get; set; }
 
-
-        public User? Users { get; set; }
-         public virtual ICollection<Comment>? Comments { get; set; }
+        public User Users { get; set; } = null!;
+        public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }
