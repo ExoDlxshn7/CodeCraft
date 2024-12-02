@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
-using SubApp1.DAL;
-using SubApp1.Models;
+using subapp2.DAL;
+using subapp2.Models;
 using System.Security.Claims;
 
-namespace SubApp1.Controllers
+namespace subapp2.Controllers
 {
-    public class CommentController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class CommentController : ControllerBase
     {
         private readonly ICommentRepository _commentRepository;
 
@@ -14,10 +16,15 @@ namespace SubApp1.Controllers
             _commentRepository = commentRepository;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddCommentIndex(int postId, string comments)
+        [HttpPost("Add")]
+        public async Task<IActionResult> AddComment(int postId, string comments)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+
             var comment = new Comment
             {
                 PostId = postId,
@@ -27,59 +34,70 @@ namespace SubApp1.Controllers
             };
 
             await _commentRepository.AddCommentAsync(comment);
-            return RedirectToAction("Index", "Home");
+            return CreatedAtAction(nameof(GetCommentById), new { id = comment.Id }, comment);
         }
-          public async Task<IActionResult> AddCommentProfile(int postId, string comments)
+
+        [HttpPut("Edit/{commentId}")]
+        public async Task<IActionResult> EditComment(int commentId, string comments)
         {
+            var comment = await _commentRepository.GetCommentByIdAsync(commentId);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var comment = new Comment
+            if (comment.UserId != userId)
             {
-                PostId = postId,
-                UserId = userId,
-                Comments = comments,
-                CreatedAt = DateTime.Now
-            };
+                return Unauthorized();
+            }
 
-            await _commentRepository.AddCommentAsync(comment);
-            return RedirectToAction("Profile", "Home");
+            comment.Comments = comments;
+            await _commentRepository.UpdateCommentAsync(comment);
+            return NoContent();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> EditCommentIndex(int commentId, string comments)
+        [HttpDelete("Delete/{commentId}")]
+        public async Task<IActionResult> DeleteComment(int commentId)
         {
             var comment = await _commentRepository.GetCommentByIdAsync(commentId);
-            if (comment != null)
+            if (comment == null)
             {
-                comment.Comments = comments;
-                await _commentRepository.UpdateCommentAsync(comment);
+                return NotFound();
             }
-            return RedirectToAction("Index", "Home");
-        }
-        public async Task<IActionResult> EditCommentProfile(int commentId, string comments)
-        {
-            var comment = await _commentRepository.GetCommentByIdAsync(commentId);
-            if (comment != null)
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (comment.UserId != userId)
             {
-                comment.Comments = comments;
-                await _commentRepository.UpdateCommentAsync(comment);
+                return Unauthorized();
             }
-            return RedirectToAction("Profile", "Home");
+
+            await _commentRepository.DeleteCommentAsync(commentId);
+            return NoContent();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> DeleteCommentIndex(int commentId)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCommentById(int id)
         {
-            await _commentRepository.DeleteCommentAsync(commentId);
-            return RedirectToAction("Index", "Home");
-        }
-        public async Task<IActionResult> DeleteCommentProfile(int commentId)
-        {
-            await _commentRepository.DeleteCommentAsync(commentId);
-            return RedirectToAction("Profile", "Home");
+            var comment = await _commentRepository.GetCommentByIdAsync(id);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(new
+            {
+                comment.Id,
+                comment.PostId,
+                comment.Comments,
+                comment.CreatedAt,
+                User = new
+                {
+                    comment.Users.Id,
+                    comment.Users.UserName,
+                    comment.Users.ProfilePic
+                }
+            });
         }
     }
 }
-
-       
-
-   

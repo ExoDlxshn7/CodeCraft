@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SubApp1.Models
+namespace supapp2.Models
 {
     public class Comment
     {
