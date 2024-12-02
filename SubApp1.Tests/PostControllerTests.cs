@@ -39,7 +39,7 @@ public class PostControllerTests
     }
 
     [Fact]
-    public async Task CreatePostIndex_ValidPost_ReturnsRedirectToAction()
+    public async Task CreatePostProfile_ValidPost_ReturnsRedirectToAction()
     {
         // Arrange
         var postContent = "Test Post Content";
@@ -49,15 +49,15 @@ public class PostControllerTests
         postImage.Setup(f => f.CopyToAsync(It.IsAny<Stream>(), It.IsAny<CancellationToken>())).Returns(Task.CompletedTask);
 
         // Act
-        var result = await _controller.CreatePostIndex(postContent, postImage.Object);
+        var result = await _controller.CreatePostProfile(postContent, postImage.Object);
 
         // Assert
         var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
-        Assert.Equal("Index", redirectToActionResult.ActionName);
+        Assert.Equal("Profile", redirectToActionResult.ActionName);
     }
 
     [Fact]
-    public async Task CreatePostIndex_InvalidPost_ReturnsViewWithModel()
+    public async Task CreatePostProfile_InvalidPost_ReturnsViewWithModel()
     {
         // Arrange
         var postContent = "";
@@ -67,7 +67,7 @@ public class PostControllerTests
         postImage.Setup(f => f.CopyToAsync(It.IsAny<Stream>(), It.IsAny<CancellationToken>())).Returns(Task.CompletedTask);
 
         // Act
-        var result = await _controller.CreatePostIndex(postContent, postImage.Object);
+        var result = await _controller.CreatePostProfile(postContent, postImage.Object);
 
         // Assert
         var viewResult = Assert.IsType<ViewResult>(result);
