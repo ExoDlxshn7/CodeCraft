@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace SubApp1.Models;
+namespace subapp2.Models;
 
 public class UserDbContext : IdentityDbContext<User>
 {

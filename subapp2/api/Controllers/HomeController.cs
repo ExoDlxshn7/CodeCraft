@@ -1,58 +1,116 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SubApp1.Models;
+using subapp2.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
-namespace SubApp1.Controllers;
-
-public class HomeController : Controller
+namespace subapp2.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-    private readonly UserDbContext _context;
-
-    public HomeController(ILogger<HomeController> logger, UserDbContext context)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class HomeController : ControllerBase
     {
-        _logger = logger;
-        _context = context;
-    }
+        private readonly ILogger<HomeController> _logger;
+        private readonly UserDbContext _context;
 
-    public IActionResult Index()
-    {
-        var posts = _context.Posts
-            .Include(p => p.Users) // Include the related Users (for the post author)
-            .Include(p => p.Comments) // Include the related Comments
-            .ThenInclude(c => c.Users) // Optionally, include the user who made the comment
-            .OrderByDescending(p => p.CreatedAt) // Order posts by creation date
-            .ToList();
+        public HomeController(ILogger<HomeController> logger, UserDbContext context)
+        {
+            _logger = logger;
+            _context = context;
+        }
 
-        return View(posts); // Pass the posts (with users and comments) to the view
-    }
+        [HttpGet("Index")]
+        public IActionResult GetPosts()
+        {
+            var posts = _context.Posts
+                .Include(p => p.Users) // Include the related Users (for the post author)
+                .Include(p => p.Comments) // Include the related Comments
+                .ThenInclude(c => c.Users) // Include the user who made the comment
+                .OrderByDescending(p => p.CreatedAt) // Order posts by creation date
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Content,
+                    p.CreatedAt,
+                    p.ImageUrl,
+                    User = new
+                    {
+                        p.Users.Id,
+                        p.Users.UserName,
+                        p.Users.ProfilePic
+                    },
+                    Comments = p.Comments.Select(c => new
+                    {
+                        c.Id,
+                        c.Comments,
+                        c.CreatedAt,
+                        User = new
+                        {
+                            c.Users.Id,
+                            c.Users.UserName,
+                            c.Users.ProfilePic
+                        }
+                    })
+                })
+                .ToList();
 
-    public IActionResult Profile()
-    {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        if (string.IsNullOrEmpty(userId)) return Unauthorized();
+            return Ok(posts);
+        }
 
-        var userPosts = _context.Posts
-            .Where(p => p.UserId == userId)
-            .Include(p => p.Users)
-            .Include(p => p.Comments)
-            .ThenInclude(c => c.Users)
-            .OrderByDescending(p => p.CreatedAt)
-            .ToList();
+        [HttpGet("Profile")]
+        public IActionResult GetUserProfile()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId)) return Unauthorized();
+
+            var userPosts = _context.Posts
+                .Where(p => p.UserId == userId)
+                .Include(p => p.Users)
+                .Include(p => p.Comments)
+                .ThenInclude(c => c.Users)
+                .OrderByDescending(p => p.CreatedAt)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Content,
+                    p.CreatedAt,
+                    p.ImageUrl,
+                    User = new
+                    {
+                        p.Users.Id,
+                        p.Users.UserName,
+                        p.Users.ProfilePic
+                    },
+                    Comments = p.Comments.Select(c => new
+                    {
+                        c.Id,
+                        c.Comments,
+                        c.CreatedAt,
+                        User = new
+                        {
+                            c.Users.Id,
+                            c.Users.UserName,
+                            c.Users.ProfilePic
+                        }
+                    })
+                })
+                .ToList();
 
             var user = _context.Users.Find(userId);
-            var profilePicUrl = user.ProfilePic;
+            if (user == null) return NotFound();
 
-            ViewData["ProfilePicUrl"] = profilePicUrl;
+            return Ok(new
+            {
+                ProfilePicUrl = user.ProfilePic,
+                Posts = userPosts
+            });
+        }
 
-        return View(userPosts);
-    }
-    
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        [HttpGet("Error")]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult GetError()
+        {
+            return Problem("An error occurred.", null, 500);
+        }
     }
 }

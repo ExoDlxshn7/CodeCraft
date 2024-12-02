@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Identity;
-namespace SubApp1.Models
+namespace subapp2.Models
 {
 	public class User : IdentityUser
 	{

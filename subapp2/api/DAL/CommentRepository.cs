@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using SubApp1.Models;
+using subapp2.Models;
 
-namespace SubApp1.DAL
+namespace subapp2.DAL
 {
     public class CommentRepository : ICommentRepository
     {
