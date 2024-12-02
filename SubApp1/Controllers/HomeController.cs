@@ -10,7 +10,7 @@ public class HomeController : Controller
 {
     // Logger for logging information
     private readonly ILogger<HomeController> _logger;
-    // Database context for accessing the database
+        // Database context for accessing the database
     private readonly UserDbContext _context;
 
     // Constructor to initialize the logger and database context
@@ -31,6 +31,12 @@ public class HomeController : Controller
             .OrderByDescending(p => p.CreatedAt) // Order posts by creation date
             .ToList();
 
+        if (posts == null || !posts.Any())
+        {
+            _logger.LogWarning("No posts found for the Index view.");
+            return NotFound("No posts available.");
+        }
+
         // Pass the posts (with users and comments) to the view
         return View(posts);
     }
@@ -41,7 +47,11 @@ public class HomeController : Controller
         // Get the user ID from the claims
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         // If user ID is not found, return Unauthorized
-        if (string.IsNullOrEmpty(userId)) return Unauthorized();
+        if (string.IsNullOrEmpty(userId))
+        {
+            _logger.LogWarning("Unauthorized access to Profile page.");
+            return Unauthorized("You must be logged in to access this page.");
+        }
 
         // Retrieve posts by the user from the database, including related users and comments
         var userPosts = _context.Posts
@@ -51,11 +61,16 @@ public class HomeController : Controller
             .ThenInclude(c => c.Users)
             .OrderByDescending(p => p.CreatedAt)
             .ToList();
+        if (!userPosts.Any())
+        {
+            _logger.LogInformation($"User with ID {userId} has no posts.");
+        }
 
         // Retrieve the user from the database
-        var user = _context.Users.Find(userId)!;
+        var user = _context.Users.Find(userId);
         if (user == null)
         {
+            _logger.LogWarning($"User with ID {userId} not found.");
             return NotFound();
         }
 
