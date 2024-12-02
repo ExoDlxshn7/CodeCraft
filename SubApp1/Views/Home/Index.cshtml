@@ -47,7 +47,7 @@
 
                     <!-- Post interaction section for adding comments -->
                     <div id="post-interaction">
-                        @if (User.Identity.IsAuthenticated)
+                       @if (User?.Identity?.IsAuthenticated == true)
                         {
                             <!-- Form for adding a comment -->
                             <form asp-action="AddCommentIndex" asp-controller="Comment" method="post">
@@ -78,7 +78,7 @@
                                     <span>@comment?.CreatedAt.ToString("MMM dd", new System.Globalization.CultureInfo("en-US")) at @comment?.CreatedAt.ToString("HH:mm")</span>
                                 </div>
                                 <p>@comment?.Comments</p>
-                                @if (comment != null && comment.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                                @if (comment != null && User?.Identity?.IsAuthenticated == true && comment.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
                                 {
                                     <button type="button" id="editbtn" onclick="showEditForm(@comment.Id)">Edit</button>
 
@@ -91,7 +91,7 @@
                                     </form>
                                 }
 
-                                @if (comment != null && (comment.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier) || post.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier)))
+                                @if (comment != null && User?.Identity?.IsAuthenticated == true && comment.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier))
                                 {
                                     <form asp-action="DeleteCommentIndex" asp-controller="Comment" method="post" style="display:inline;">
                                         <input type="hidden" name="commentId" value="@comment.Id" />

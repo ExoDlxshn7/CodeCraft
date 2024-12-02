@@ -67,7 +67,7 @@ public class HomeController : Controller
         }
 
         // Retrieve the user from the database
-        var user = _context.Users.Find(userId);
+        var user = _context.Users?.Find(userId);
         if (user == null)
         {
             _logger.LogWarning($"User with ID {userId} not found.");

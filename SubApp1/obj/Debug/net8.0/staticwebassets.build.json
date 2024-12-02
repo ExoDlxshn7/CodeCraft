@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Wm8UB5BkI8cNhzgc7IQKYXc+lU1V36ADPhb3wDN2nn0=",
+  "Hash": "ovrJK1J0mqDmjZMiByHpvxuExpRFJ8HOgjpsJFTuIeM=",
   "Source": "SubApp1",
   "BasePath": "_content/SubApp1",
   "Mode": "Default",
@@ -1423,6 +1423,25 @@
       "OriginalItemSpec": "wwwroot\\Images\\gk10c2mp.h5a638682454893997338.png"
     },
     {
+      "Identity": "C:\\Users\\Thilo\\OneDrive\\Dokumenter\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\Images\\h3uovd0t.1tf.png",
+      "SourceId": "SubApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Thilo\\OneDrive\\Dokumenter\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\",
+      "BasePath": "_content/SubApp1",
+      "RelativePath": "Images/h3uovd0t.1tf.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\h3uovd0t.1tf.png"
+    },
+    {
       "Identity": "C:\\Users\\Thilo\\OneDrive\\Dokumenter\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\Images\\iw2ux2vw.hvp638683237138508018.jpg",
       "SourceId": "SubApp1",
       "SourceType": "Discovered",
@@ -1573,6 +1592,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\profile_mu1fu0qy.541638682352465422474.png"
+    },
+    {
+      "Identity": "C:\\Users\\Thilo\\OneDrive\\Dokumenter\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\Images\\profile_sjfsw30b.2jx638687205715419883.png",
+      "SourceId": "SubApp1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Thilo\\OneDrive\\Dokumenter\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\",
+      "BasePath": "_content/SubApp1",
+      "RelativePath": "Images/profile_sjfsw30b.2jx638687205715419883.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\profile_sjfsw30b.2jx638687205715419883.png"
     },
     {
       "Identity": "C:\\Users\\Thilo\\OneDrive\\Dokumenter\\GitHub\\CodeCraft\\SubApp1\\wwwroot\\Images\\profile_trdj0qvw.t0y638685234780193273.png",

@@ -40,19 +40,16 @@ namespace SubApp1.Controllers
                 UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),
             };
 
-            if (PostImage == null)
-            {
-                 _logger.LogError("No Image was added");
-            }
-
             // If an image is uploaded, save it to the server and set the image URL
-            var fileName = Path.Combine(_env.WebRootPath, "Images", Path.GetRandomFileName() + Path.GetExtension(PostImage.FileName));
-            using (var fileStream = new FileStream(fileName, FileMode.Create))
+            if (PostImage != null)
             {
-                await PostImage.CopyToAsync(fileStream);
+                var fileName = Path.Combine(_env.WebRootPath, "Images", Path.GetRandomFileName() + Path.GetExtension(PostImage.FileName));
+                using (var fileStream = new FileStream(fileName, FileMode.Create))
+                {
+                    await PostImage.CopyToAsync(fileStream);
+                }
+                post.ImageUrl = "/Images/" + Path.GetFileName(fileName);
             }
-            post.ImageUrl = "/Images/" + Path.GetFileName(fileName);
-
             // Add the post to the repository
             await _postRepository.AddPostAsync(post);
              _logger.LogInformation($"Post created successfully by user {userId}.");
