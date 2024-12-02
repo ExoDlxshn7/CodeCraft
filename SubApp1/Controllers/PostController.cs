@@ -42,7 +42,7 @@ namespace SubApp1.Controllers
 
             if (PostImage == null)
             {
-                 _logger.LogError(ex, "No Image was added");
+                 _logger.LogError("No Image was added");
             }
 
             // If an image is uploaded, save it to the server and set the image URL
